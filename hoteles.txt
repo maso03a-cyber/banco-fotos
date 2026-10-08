@@ -1,0 +1,4 @@
+# Un hotel por renglon:  Ciudad/Carpeta | latitud,longitud | Nombre del hotel
+# GitHub genera mapa.png y mapa.json (alrededores) en esa carpeta.
+# Las coordenadas salen de Google Maps (el numero despues de @ en la direccion).
+Cdmx/Holiday_Inn_Express_Sur | 19.510777,-99.236699 | Holiday Inn Express Satélite
