@@ -1,0 +1,31 @@
+# Una ciudad por renglon:  Carpeta del banco | busqueda de fotos
+# Al agregar una ciudad aqui (y guardar), GitHub baja solo 4 fotos a <Carpeta>/Destino.
+# Las ciudades que ya tienen fotos no se tocan.
+Cdmx | Mexico City landmarks
+Puebla | Puebla Mexico historic center
+Guadalajara | Guadalajara Jalisco
+Monterrey | Monterrey Mexico
+Queretaro | Queretaro Mexico
+Merida | Merida Yucatan
+Oaxaca | Oaxaca city Mexico
+Veracruz | Veracruz port Mexico
+Boca_del_Rio | Boca del Rio Veracruz
+Xalapa | Xalapa Veracruz
+Cancun | Cancun beach
+Guanajuato | Guanajuato city
+San_Miguel_de_Allende | San Miguel de Allende
+Morelia | Morelia Michoacan
+Cuernavaca | Cuernavaca Morelos
+Tlaxcala | Tlaxcala Mexico
+Toluca | Toluca Mexico
+Pachuca | Pachuca Hidalgo
+Leon | Leon Guanajuato
+Aguascalientes | Aguascalientes Mexico
+San_Luis_Potosi | San Luis Potosi city
+Tecolutla | Tecolutla Veracruz beach
+Orizaba | Orizaba Veracruz
+Tulum | Tulum Mexico
+Playa_del_Carmen | Playa del Carmen
+Puerto_Vallarta | Puerto Vallarta
+Mazatlan | Mazatlan Sinaloa
+Acapulco | Acapulco
