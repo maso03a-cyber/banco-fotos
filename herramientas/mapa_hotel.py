@@ -18,7 +18,7 @@ import requests
 
 UA = {"User-Agent": "banco-fotos-college-traveler/1.0 (contacto@collegetraveler.com)"}
 OVERPASS = ["https://overpass-api.de/api/interpreter", "https://overpass.kumi.systems/api/interpreter"]
-DX, DY = 950, 594          # medio ancho y medio alto del mapa en metros (proporcion 16:10)
+DX, DY = 600, 750          # medio ancho y medio alto en metros (vertical 4:5, ocupa media lamina)
 CATS = {
     "salud":   {"color": "#12A150", "max": 3, "titulo": "Farmacias y salud"},
     "tiendas": {"color": "#E8A317", "max": 3, "titulo": "Tiendas"},
@@ -126,7 +126,7 @@ def mapa(carpeta, lat, lng, nombre_hotel):
         l["n"] = i
         l["min"] = max(1, round(l["d"] * 1.3 / 80))     # caminando, 80 m/min, calles no rectas
 
-    fig = plt.figure(figsize=(16, 10), dpi=100)
+    fig = plt.figure(figsize=(8, 10), dpi=150)
     ax = fig.add_axes([0, 0, 1, 1])
     ax.set_xlim(-DX, DX)
     ax.set_ylim(-DY, DY)
@@ -142,15 +142,15 @@ def mapa(carpeta, lat, lng, nombre_hotel):
         w, col = CALLES[h]
         ax.plot([p[0] for p in g], [p[1] for p in g], color=col, lw=w, zorder=3, solid_capstyle="round")
     ax.add_patch(Circle((0, 0), 500, fill=False, ls=(0, (4, 4)), lw=1.2, ec="#9DB4C8", zorder=4))
-    ax.text(0, 512, "8 min caminando", ha="center", va="bottom", fontsize=11, color="#7C93A8", zorder=4)
+    ax.text(0, 512, "8 min caminando", ha="center", va="bottom", fontsize=10, color="#7C93A8", zorder=4)
     for l in elegidos:
         col = CATS[l["cat"]]["color"]
-        ax.add_patch(Circle((l["x"], l["y"]), 30, color=col, ec="white", lw=2.5, zorder=6))
-        ax.text(l["x"], l["y"], str(l["n"]), ha="center", va="center", fontsize=12.5, fontweight="bold",
+        ax.add_patch(Circle((l["x"], l["y"]), 26, color=col, ec="white", lw=2.5, zorder=6))
+        ax.text(l["x"], l["y"], str(l["n"]), ha="center", va="center", fontsize=10.5, fontweight="bold",
                 color="white", zorder=7)
-    ax.add_patch(Circle((0, 0), 48, color="#009DE0", ec="white", lw=4, zorder=8))
-    ax.text(0, 0, "H", ha="center", va="center", fontsize=19, fontweight="bold", color="white", zorder=9)
-    ax.text(DX - 14, -DY + 12, "© OpenStreetMap contributors", ha="right", va="bottom", fontsize=9,
+    ax.add_patch(Circle((0, 0), 40, color="#009DE0", ec="white", lw=4, zorder=8))
+    ax.text(0, 0, "H", ha="center", va="center", fontsize=15, fontweight="bold", color="white", zorder=9)
+    ax.text(DX - 14, -DY + 12, "© OpenStreetMap contributors", ha="right", va="bottom", fontsize=7.5,
             color="#94A3B8", zorder=9)
     fig.savefig(os.path.join(carpeta, "mapa.png"), facecolor="white")
     plt.close(fig)
