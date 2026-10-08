@@ -77,7 +77,8 @@ def commons(q):
             if not p or EVITAR.search(t):
                 continue
             ii = (p.get("imageinfo") or [{}])[0]
-            if ii.get("width", 0) < 1600 or ii.get("width", 0) < ii.get("height", 1) * 1.25:
+            if ii.get("width", 0) < 1600 or ii.get("width", 0) < ii.get("height", 1) * 1.25 \
+                    or ii.get("width", 0) > ii.get("height", 1) * 2.3:
                 continue
             md = ii.get("extmetadata", {})
             lic = limpio(md.get("LicenseShortName", {}).get("value"))
