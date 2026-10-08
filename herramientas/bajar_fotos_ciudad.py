@@ -3,8 +3,9 @@ tenga fotos en <Carpeta>/Destino.
 
 Fuentes, en orden:
   1. Pexels, si hay PEXELS_API_KEY (sin atribucion obligatoria).
-  2. Wikimedia Commons, solo fotos marcadas como "Quality images" (revisadas
-     por la comunidad): fotos reales, buena resolucion. Licencias CC0, dominio
+  2. Las fotos del articulo de la ciudad en Wikipedia (espanol e ingles),
+     leidas de Wikimedia Commons: vistas y monumentos elegidos por la
+     comunidad, buena resolucion. Licencias CC0, dominio
      publico, CC BY o CC BY-SA. Las CC BY piden credito: va en CREDITOS.txt y
      la skill lo imprime en la presentacion.
 Guarda 1.jpg..4.jpg de 1600 px de ancho y CREDITOS.txt (una linea por foto).
@@ -20,7 +21,7 @@ from PIL import Image
 
 UA = {"User-Agent": "banco-fotos-college-traveler/1.0 (contacto@collegetraveler.com)"}
 ANCHO = 1600
-EVITAR = re.compile(r"map|mapa|plano|logo|escudo|coat|flag|bandera|seal|diagram|sign|interior of|detail|detalle", re.I)
+EVITAR = re.compile(r"map|mapa|plano|logo|escudo|coat|flag|bandera|seal|diagram|sign|interior|detail|detalle|retrato|portrait|\\bpres|governor|gobernador|airport|aeropuerto|stadium|estadio", re.I)
 LIC_OK = re.compile(r"^(cc0|public domain|pd|cc by(-sa)? ?[0-9.]*)", re.I)
 
 
@@ -36,18 +37,46 @@ def pexels(q, key):
         yield p["src"]["large2x"], f'{p["photographer"]} / Pexels'
 
 
+def _articulo(wiki, q):
+    r = requests.get(f"https://{wiki}.wikipedia.org/w/api.php", headers=UA, timeout=30, params={
+        "action": "query", "format": "json", "list": "search", "srsearch": q, "srlimit": 1})
+    r.raise_for_status()
+    res = r.json().get("query", {}).get("search", [])
+    return res[0]["title"] if res else None
+
+
+def _imagenes(wiki, titulo):
+    r = requests.get(f"https://{wiki}.wikipedia.org/w/api.php", headers=UA, timeout=30, params={
+        "action": "parse", "format": "json", "page": titulo, "prop": "images", "redirects": 1})
+    r.raise_for_status()
+    return [f"File:{x}" for x in r.json().get("parse", {}).get("images", [])
+            if x.lower().endswith((".jpg", ".jpeg"))]
+
+
 def commons(q):
-    for extra in ('incategory:"Quality_images"', ""):
+    """Fotos del articulo de la ciudad en Wikipedia (espanol e ingles): son
+    las que la comunidad eligio para ilustrar la ciudad, asi que son vistas y
+    monumentos, no insectos ni coches. Se leen de Commons con su licencia."""
+    archivos = []
+    for wiki in ("es", "en"):
+        try:
+            t = _articulo(wiki, q)
+            if t:
+                archivos += [a for a in _imagenes(wiki, t) if a not in archivos]
+        except Exception as e:
+            print(f"  {wiki}.wikipedia: {e}")
+    for i in range(0, len(archivos), 40):
+        lote = archivos[i:i + 40]
         r = requests.get("https://commons.wikimedia.org/w/api.php", headers=UA, timeout=40, params={
-            "action": "query", "format": "json", "generator": "search", "gsrnamespace": 6, "gsrlimit": 40,
-            "gsrsearch": f'{q} filetype:bitmap {extra}'.strip(),
+            "action": "query", "format": "json", "titles": "|".join(lote),
             "prop": "imageinfo", "iiprop": "url|size|extmetadata", "iiurlwidth": ANCHO})
         r.raise_for_status()
-        pages = sorted((r.json().get("query") or {}).get("pages", {}).values(), key=lambda p: p.get("index", 99))
-        for p in pages:
-            ii = (p.get("imageinfo") or [{}])[0]
-            if EVITAR.search(p.get("title", "")):
+        info = {p.get("title"): p for p in (r.json().get("query") or {}).get("pages", {}).values()}
+        for t in lote:
+            p = info.get(t.replace("_", " ")) or info.get(t)
+            if not p or EVITAR.search(t):
                 continue
+            ii = (p.get("imageinfo") or [{}])[0]
             if ii.get("width", 0) < 1600 or ii.get("width", 0) < ii.get("height", 1) * 1.25:
                 continue
             md = ii.get("extmetadata", {})
@@ -55,8 +84,7 @@ def commons(q):
             if not LIC_OK.match(lic):
                 continue
             autor = limpio(md.get("Artist", {}).get("value")) or "autor desconocido"
-            autor = autor.split("\n")[0][:60]
-            yield ii.get("thumburl") or ii["url"], f"{autor} / Wikimedia Commons, {lic}"
+            yield ii.get("thumburl") or ii["url"], f"{autor.splitlines()[0][:60]} / Wikimedia Commons, {lic}"
 
 
 def guardar(url, ruta):
