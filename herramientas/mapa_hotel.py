@@ -100,19 +100,27 @@ def mapa(carpeta, lat, lng, nombre_hotel):
                 continue
             if abs(x) > DX * 0.94 or abs(y) > DY * 0.92:
                 continue
-            lugares.append({"cat": c, "nombre": n, "x": x, "y": y, "d": math.hypot(x, y)})
+            sub = t.get("amenity") or t.get("shop")
+            lugares.append({"cat": c, "sub": sub, "nombre": n, "x": x, "y": y, "d": math.hypot(x, y)})
 
-    # los mas cercanos de cada categoria, sin repetir nombre
-    elegidos = []
-    for c, cfg in CATS.items():
-        vistos = set()
-        for l in sorted([l for l in lugares if l["cat"] == c], key=lambda l: l["d"]):
+    # Lo mas cercano de cada tipo, sin repetir nombre. Orden de preferencia:
+    # 2 farmacias + 1 hospital; 2 tiendas de conveniencia (OXXO, 7-Eleven) +
+    # 1 supermercado; 3 lugares para comer; 2 plazas.
+    cupos = [("salud", ("pharmacy",), 2), ("salud", ("hospital", "clinic"), 1),
+             ("tiendas", ("convenience",), 2), ("tiendas", ("supermarket",), 1),
+             ("comida", ("restaurant", "fast_food", "cafe"), 3),
+             ("plazas", ("mall", "department_store", "marketplace"), 2)]
+    elegidos, vistos = [], set()
+    for cat, subs, cupo in cupos:
+        k = 0
+        for l in sorted([l for l in lugares if l["cat"] == cat and l["sub"] in subs], key=lambda l: l["d"]):
             clave = l["nombre"].lower()
             if clave in vistos:
                 continue
             vistos.add(clave)
             elegidos.append(l)
-            if len(vistos) == cfg["max"]:
+            k += 1
+            if k == cupo:
                 break
     for i, l in enumerate(elegidos, 1):
         l["n"] = i
