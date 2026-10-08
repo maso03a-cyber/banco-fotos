@@ -60,15 +60,25 @@ def overpass(lat, lng):
  nwr["shop"~"^(convenience|supermarket|mall|department_store)$"]({bbox});
 );
 out geom;"""
+    import time
     ultimo = None
-    for url in OVERPASS:
-        try:
-            r = requests.post(url, data={"data": q}, headers=UA, timeout=120)
-            r.raise_for_status()
-            return r.json()["elements"]
-        except Exception as e:
-            ultimo = e
+    for intento in range(3):
+        for url in OVERPASS:
+            try:
+                r = requests.post(url, data={"data": q}, headers=UA, timeout=150)
+                r.raise_for_status()
+                return r.json()["elements"]
+            except Exception as e:
+                ultimo = e
+                log(f"  overpass {url}: {e}")
+        time.sleep(20)
     raise ultimo
+
+
+def log(msg):
+    print(msg, flush=True)
+    with open("herramientas/registro_mapas.txt", "a", encoding="utf-8") as f:
+        f.write(msg + "\n")
 
 
 def a_metros(lat0, lng0):
@@ -158,7 +168,7 @@ def mapa(carpeta, lat, lng, nombre_hotel):
               "categorias": {c: {"titulo": v["titulo"], "color": v["color"]} for c, v in CATS.items()},
               "lugares": [{k: l[k] for k in ("n", "cat", "nombre", "min")} for l in elegidos]}
     json.dump(salida, open(os.path.join(carpeta, "mapa.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-    print(f"{carpeta}: {len(elegidos)} lugares", flush=True)
+    log(f"{carpeta}: {len(elegidos)} lugares")
 
 
 def main():
@@ -176,7 +186,7 @@ def main():
         try:
             mapa(carpeta, lat, lng, nom)
         except Exception as e:
-            print(f"ERROR en {carpeta}: {e}", flush=True)
+            log(f"ERROR en {carpeta}: {e}")
 
 
 if __name__ == "__main__":
