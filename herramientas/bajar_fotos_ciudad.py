@@ -108,42 +108,60 @@ def fotos_en(destino):
 
 
 def main():
+    """Llena cada ciudad hasta 4 fotos. Si alguien borra una foto mala de una
+    carpeta que lleno este bot, en la siguiente corrida se repone con otra
+    (las que ya se usaron o se borraron no se vuelven a bajar)."""
     key = os.environ.get("PEXELS_API_KEY", "").strip()
-    errores = 0
     for linea in open("ciudades.txt", encoding="utf-8"):
         linea = linea.strip()
         if not linea or linea.startswith("#") or "|" not in linea:
             continue
         carpeta, q = [x.strip() for x in linea.split("|", 1)]
         destino = os.path.join(carpeta, "Destino")
-        hay = fotos_en(destino)
-        del_bot = os.path.exists(os.path.join(destino, "CREDITOS.txt"))
-        if hay and not (del_bot and len(hay) < 3):
+        cred_path = os.path.join(destino, "CREDITOS.txt")
+        hay = sorted(fotos_en(destino))
+        if hay and not os.path.exists(cred_path):
+            continue                      # carpeta subida a mano: no se toca
+        if len(hay) >= 4:
             continue
-        if del_bot:
-            for f in hay + ["CREDITOS.txt"]:
-                os.remove(os.path.join(destino, f))
         os.makedirs(destino, exist_ok=True)
+        previos = {}
+        usadas = set()
+        if os.path.exists(cred_path):
+            for l in open(cred_path, encoding="utf-8"):
+                if ": " in l:
+                    f, resto = l.rstrip("\n").split(": ", 1)
+                    previos[f] = resto
+                    usadas.add(resto.split(" | ")[-1])
+        # renumerar las que quedan: 1.jpg, 2.jpg...
+        creditos = []
+        for n_, f in enumerate(hay, 1):
+            nuevo = f"{n_}.jpg"
+            if f != nuevo:
+                os.rename(os.path.join(destino, f), os.path.join(destino, nuevo))
+            creditos.append(f"{nuevo}: {previos.get(f, 'sin dato')}")
+        n = len(hay)
         fuentes = ([pexels(q, key)] if key else []) + [commons(q)]
-        creditos, n = [], 0
         for fuente in fuentes:
             try:
                 for url, credito in fuente:
                     if n == 4:
                         break
+                    if url in usadas:
+                        continue
+                    usadas.add(url)
                     try:
                         if guardar(url, os.path.join(destino, f"{n + 1}.jpg")):
                             n += 1
-                            creditos.append(f"{n}.jpg: {credito}")
+                            creditos.append(f"{n}.jpg: {credito} | {url}")
                     except Exception as e:
                         print(f"  saltada: {e}")
             except Exception as e:
                 print(f"ERROR en {carpeta}: {e}")
-                errores += 1
             if n == 4:
                 break
         if creditos:
-            open(os.path.join(destino, "CREDITOS.txt"), "w", encoding="utf-8").write("\n".join(creditos) + "\n")
+            open(cred_path, "w", encoding="utf-8").write("\n".join(creditos) + "\n")
         print(f"{carpeta}: {n} fotos", flush=True)
     sys.exit(0)
 
