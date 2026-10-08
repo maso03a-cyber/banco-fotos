@@ -21,7 +21,7 @@ from PIL import Image
 
 UA = {"User-Agent": "banco-fotos-college-traveler/1.0 (contacto@collegetraveler.com)"}
 ANCHO = 1600
-EVITAR = re.compile(r"map|mapa|plano|logo|escudo|coat|flag|bandera|seal|diagram|sign|interior|detail|detalle|retrato|portrait|\\bpres|governor|gobernador|airport|aeropuerto|stadium|estadio", re.I)
+EVITAR = re.compile(r"map|mapa|plano|logo|escudo|coat|flag|bandera|seal|diagram|sign|interior|detail|detalle|retrato|portrait|\\bpres|governor|gobernador|airport|aeropuerto|stadium|estadio|hurric|hurac|satellite|sat[eé]lite_image|grabado|litograf|engraving|\\b1[5-8][0-9]{2}\\b", re.I)
 LIC_OK = re.compile(r"^(cc0|public domain|pd|cc by(-sa)? ?[0-9.]*)", re.I)
 
 
@@ -92,6 +92,10 @@ def guardar(url, ruta):
     r.raise_for_status()
     im = Image.open(io.BytesIO(r.content)).convert("RGB")
     if im.width < 1200 or im.width < im.height * 1.2:
+        return False
+    # Fuera fotos en blanco y negro, sepia o grabados antiguos: saturacion baja.
+    sat = im.convert("HSV").resize((64, 40)).getchannel("S")
+    if sum(sat.getdata()) / (64 * 40 * 255) < 0.16:
         return False
     if im.width > ANCHO:
         im = im.resize((ANCHO, round(im.height * ANCHO / im.width)), Image.LANCZOS)
