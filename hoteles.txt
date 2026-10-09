@@ -2,3 +2,6 @@
 # GitHub genera mapa.png y mapa.json (alrededores) en esa carpeta.
 # Las coordenadas salen de Google Maps (el numero despues de @ en la direccion).
 Cdmx/Holiday_Inn_Express_Sur | 19.510777,-99.236699 | Holiday Inn Express Satélite
+Guadalajara/Best_Western_Plus | 20.6741009,-103.3426558 | Best Western Plus Gran Hotel Centro Histórico
+Guadalajara/Sleep_Inn | 20.6812326,-103.4338116 | Sleep Inn Guadalajara Galerías
+Guadalajara/Holiday_Inn_Express_Expo | 20.6500538,-103.3992137 | Holiday Inn Express Guadalajara Expo
