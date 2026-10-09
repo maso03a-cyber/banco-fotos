@@ -1,0 +1,91 @@
+{
+ "hotel": "Best Western Plus Gran Hotel Centro Histórico",
+ "lat": 20.6741009,
+ "lng": -103.3426558,
+ "categorias": {
+  "salud": {
+   "titulo": "Farmacias y salud",
+   "color": "#12A150"
+  },
+  "tiendas": {
+   "titulo": "Tiendas",
+   "color": "#E8A317"
+  },
+  "comida": {
+   "titulo": "Para comer",
+   "color": "#E0533D"
+  },
+  "plazas": {
+   "titulo": "Plazas comerciales",
+   "color": "#7A5CD6"
+  }
+ },
+ "lugares": [
+  {
+   "n": 1,
+   "cat": "salud",
+   "nombre": "FARMACIAS GUADALAJARA",
+   "min": 3
+  },
+  {
+   "n": 2,
+   "cat": "salud",
+   "nombre": "GENERIX",
+   "min": 3
+  },
+  {
+   "n": 3,
+   "cat": "salud",
+   "nombre": "Hospital del Sagrado Corazón",
+   "min": 9
+  },
+  {
+   "n": 4,
+   "cat": "tiendas",
+   "nombre": "Oxxo",
+   "min": 3
+  },
+  {
+   "n": 5,
+   "cat": "tiendas",
+   "nombre": "7-Eleven",
+   "min": 7
+  },
+  {
+   "n": 6,
+   "cat": "tiendas",
+   "nombre": "Waldo’s",
+   "min": 9
+  },
+  {
+   "n": 7,
+   "cat": "comida",
+   "nombre": "Taquería La Guadalupana",
+   "min": 2
+  },
+  {
+   "n": 8,
+   "cat": "comida",
+   "nombre": "Tortas Ahogadas El Güerito",
+   "min": 2
+  },
+  {
+   "n": 9,
+   "cat": "comida",
+   "nombre": "Tortas Ahogadas Enrique's",
+   "min": 3
+  },
+  {
+   "n": 10,
+   "cat": "plazas",
+   "nombre": "Sanborns",
+   "min": 8
+  },
+  {
+   "n": 11,
+   "cat": "plazas",
+   "nombre": "Liverpool",
+   "min": 8
+  }
+ ]
+}

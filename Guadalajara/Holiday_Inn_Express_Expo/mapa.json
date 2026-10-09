@@ -1,0 +1,85 @@
+{
+ "hotel": "Holiday Inn Express Guadalajara Expo",
+ "lat": 20.6500538,
+ "lng": -103.3992137,
+ "categorias": {
+  "salud": {
+   "titulo": "Farmacias y salud",
+   "color": "#12A150"
+  },
+  "tiendas": {
+   "titulo": "Tiendas",
+   "color": "#E8A317"
+  },
+  "comida": {
+   "titulo": "Para comer",
+   "color": "#E0533D"
+  },
+  "plazas": {
+   "titulo": "Plazas comerciales",
+   "color": "#7A5CD6"
+  }
+ },
+ "lugares": [
+  {
+   "n": 1,
+   "cat": "salud",
+   "nombre": "Farmacia Guadalajara",
+   "min": 4
+  },
+  {
+   "n": 2,
+   "cat": "salud",
+   "nombre": "Farmacia Benavides",
+   "min": 4
+  },
+  {
+   "n": 3,
+   "cat": "tiendas",
+   "nombre": "Oxxo",
+   "min": 2
+  },
+  {
+   "n": 4,
+   "cat": "tiendas",
+   "nombre": "7-Eleven",
+   "min": 6
+  },
+  {
+   "n": 5,
+   "cat": "tiendas",
+   "nombre": "Soriana Híper",
+   "min": 3
+  },
+  {
+   "n": 6,
+   "cat": "comida",
+   "nombre": "McDonald's",
+   "min": 1
+  },
+  {
+   "n": 7,
+   "cat": "comida",
+   "nombre": "La Casa De Tata",
+   "min": 2
+  },
+  {
+   "n": 8,
+   "cat": "comida",
+   "nombre": "KFC",
+   "min": 2
+  },
+  {
+   "n": 9,
+   "cat": "plazas",
+   "nombre": "Plaza del Sol",
+   "min": 4
+  },
+  {
+   "n": 10,
+   "cat": "plazas",
+   "nombre": "Mundara (El Nuevo Mundo)",
+   "min": 5
+  }
+ ]
+}

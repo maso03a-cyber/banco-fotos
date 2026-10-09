@@ -1,0 +1,61 @@
+{
+ "hotel": "Sleep Inn Guadalajara Galerías",
+ "lat": 20.6812326,
+ "lng": -103.4338116,
+ "categorias": {
+  "salud": {
+   "titulo": "Farmacias y salud",
+   "color": "#12A150"
+  },
+  "tiendas": {
+   "titulo": "Tiendas",
+   "color": "#E8A317"
+  },
+  "comida": {
+   "titulo": "Para comer",
+   "color": "#E0533D"
+  },
+  "plazas": {
+   "titulo": "Plazas comerciales",
+   "color": "#7A5CD6"
+  }
+ },
+ "lugares": [
+  {
+   "n": 1,
+   "cat": "tiendas",
+   "nombre": "Chedraui",
+   "min": 2
+  },
+  {
+   "n": 2,
+   "cat": "comida",
+   "nombre": "Taco Fish San Blas",
+   "min": 1
+  },
+  {
+   "n": 3,
+   "cat": "comida",
+   "nombre": "El Lumbrero",
+   "min": 4
+  },
+  {
+   "n": 4,
+   "cat": "comida",
+   "nombre": "Tamales Santa Cruz",
+   "min": 4
+  },
+  {
+   "n": 5,
+   "cat": "plazas",
+   "nombre": "Walmart",
+   "min": 4
+  },
+  {
+   "n": 6,
+   "cat": "plazas",
+   "nombre": "Sanborns",
+   "min": 7
+  }
+ ]
+}
