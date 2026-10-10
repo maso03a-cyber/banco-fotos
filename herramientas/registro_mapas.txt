@@ -8,3 +8,4 @@ Guadalajara/Sleep_Inn: 6 lugares
 Guadalajara/Holiday_Inn_Express_Expo: 10 lugares
 Cdmx/Paragon_de_Santa_Fe: 11 lugares
 Cdmx/Paragon_de_Santa_Fe: 11 lugares
+Cdmx/Paragon_de_Santa_Fe: 10 lugares
