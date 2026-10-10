@@ -48,7 +48,8 @@ def categoria(t):
 # realidad son oficinas, bodegas o empresas (ej. "Corporativo Diamante", "Celgene Logistics").
 import re
 NO_SIRVE = re.compile(r"corporativ|oficina|office|logistic|bodega|almac[eé]n|warehouse|distribu|"
-                      r"headquarter|matriz|torre |tower|business center|centro de negocios", re.I)
+                      r"headquarter|matriz|torre |tower|business center|centro de negocios|laborator|aesthetic|"
+                      r"pharma(?!c)|comercio de|servicios|s\.a\.|s\. ?de ?r\.?l|corporation|inc\.", re.I)
 
 
 def nombre(t):
