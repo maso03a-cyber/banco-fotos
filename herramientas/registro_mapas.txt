@@ -6,3 +6,4 @@ Guadalajara/Sleep_Inn: 6 lugares
   overpass https://overpass-api.de/api/interpreter: 429 Client Error: Too Many Requests for url: https://overpass-api.de/api/interpreter
   overpass https://overpass.kumi.systems/api/interpreter: 500 Server Error: Internal Server Error for url: https://overpass.kumi.systems/api/interpreter
 Guadalajara/Holiday_Inn_Express_Expo: 10 lugares
+Cdmx/Paragon_de_Santa_Fe: 11 lugares
