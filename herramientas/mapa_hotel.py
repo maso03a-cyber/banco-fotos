@@ -44,6 +44,13 @@ def categoria(t):
     return None
 
 
+# Nombres que OpenStreetMap a veces etiqueta como tienda/plaza/farmacia y que en
+# realidad son oficinas, bodegas o empresas (ej. "Corporativo Diamante", "Celgene Logistics").
+import re
+NO_SIRVE = re.compile(r"corporativ|oficina|office|logistic|bodega|almac[eé]n|warehouse|distribu|"
+                      r"headquarter|matriz|torre |tower|business center|centro de negocios", re.I)
+
+
 def nombre(t):
     n = t.get("name") or t.get("brand") or ""
     return n.strip()
@@ -99,19 +106,28 @@ def mapa(carpeta, lat, lng, nombre_hotel):
             parques.append(geom)
         c = categoria(t)
         if c:
+            area = 0
             if e["type"] == "node":
                 x, y = xy(e["lat"], e["lon"])
             elif geom:
                 x, y = sum(p[0] for p in geom) / len(geom), sum(p[1] for p in geom) / len(geom)
+            elif e.get("bounds"):
+                b = e["bounds"]
+                x, y = xy((b["minlat"] + b["maxlat"]) / 2, (b["minlon"] + b["maxlon"]) / 2)
             else:
                 continue
+            if e.get("bounds"):
+                b = e["bounds"]
+                x0, y0 = xy(b["minlat"], b["minlon"])
+                x1, y1 = xy(b["maxlat"], b["maxlon"])
+                area = abs((x1 - x0) * (y1 - y0))
             n = nombre(t)
-            if not n:
+            if not n or NO_SIRVE.search(n):
                 continue
             if abs(x) > DX * 0.94 or abs(y) > DY * 0.92:
                 continue
             sub = t.get("amenity") or t.get("shop")
-            lugares.append({"cat": c, "sub": sub, "nombre": n, "x": x, "y": y, "d": math.hypot(x, y)})
+            lugares.append({"cat": c, "sub": sub, "nombre": n, "x": x, "y": y, "d": math.hypot(x, y), "area": area})
 
     # Lo mas cercano de cada tipo, sin repetir nombre. Orden de preferencia:
     # 2 farmacias + 1 hospital; 2 tiendas de conveniencia (OXXO, 7-Eleven) +
@@ -123,7 +139,9 @@ def mapa(carpeta, lat, lng, nombre_hotel):
     elegidos, vistos = [], set()
     for cat, subs, cupo in cupos:
         k = 0
-        for l in sorted([l for l in lugares if l["cat"] == cat and l["sub"] in subs], key=lambda l: l["d"]):
+        # Plazas: primero las grandes (Centro Santa Fe antes que un local); lo demas, lo mas cercano.
+        orden = (lambda l: -l["area"]) if cat == "plazas" else (lambda l: l["d"])
+        for l in sorted([l for l in lugares if l["cat"] == cat and l["sub"] in subs], key=orden):
             clave = l["nombre"].lower()
             if clave in vistos:
                 continue
