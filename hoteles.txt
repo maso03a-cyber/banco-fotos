@@ -5,3 +5,4 @@ Cdmx/Holiday_Inn_Express_Sur | 19.510777,-99.236699 | Holiday Inn Express Satél
 Guadalajara/Best_Western_Plus | 20.6741009,-103.3426558 | Best Western Plus Gran Hotel Centro Histórico
 Guadalajara/Sleep_Inn | 20.6812326,-103.4338116 | Sleep Inn Guadalajara Galerías
 Guadalajara/Holiday_Inn_Express_Expo | 20.6500538,-103.3992137 | Holiday Inn Express Guadalajara Expo
+Cdmx/Paragon_de_Santa_Fe | 19.3580166,-99.2780809 | The Paragon Hotel Santa Fe
