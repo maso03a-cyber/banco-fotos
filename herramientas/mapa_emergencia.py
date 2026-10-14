@@ -51,7 +51,7 @@ def nivel(l):
     return 3
 
 
-CADENAS = re.compile(r"\babc\b|[aá]ngeles|star m[eé]dica|m[eé]dica sur|san jos[eé]|puerta de hierro|christus|"
+CADENAS = re.compile(r"\babc|[aá]ngeles|star m[eé]dica|m[eé]dica sur|san jos[eé]|puerta de hierro|christus|"
                      r"\bimss\b|issste|cruz roja|hospital espa[nñ]ol|galenia|amerimed|\bmac\b|\bhmg\b", re.I)
 
 
