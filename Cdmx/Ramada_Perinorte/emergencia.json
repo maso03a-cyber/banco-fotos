@@ -1,0 +1,64 @@
+{
+ "hotel": "Ramada by Wyndham Ciudad de México Perinorte",
+ "tel_hotel": "",
+ "lat": 19.5839346,
+ "lng": -99.2030547,
+ "generado": "2026-10-14",
+ "lugares": [
+  {
+   "n": 1,
+   "cat": "hospital",
+   "nombre": "UMAA 199",
+   "km": 1.3,
+   "min": 3,
+   "tel": "",
+   "dir": "Carretera Lago de Guadalupe",
+   "24h": false,
+   "maps": "https://www.google.com/maps/dir/?api=1&origin=19.5839346,-99.2030547&destination=19.577250,-99.208878"
+  },
+  {
+   "n": 2,
+   "cat": "hospital",
+   "nombre": "Clínica La Quebrada",
+   "km": 2.2,
+   "min": 5,
+   "tel": "",
+   "dir": "Avenida La Quebrada",
+   "24h": false,
+   "maps": "https://www.google.com/maps/dir/?api=1&origin=19.5839346,-99.2030547&destination=19.596329,-99.195308"
+  },
+  {
+   "n": 3,
+   "cat": "hospital",
+   "nombre": "IMSS HGZ 57 \"La Quebrada\"",
+   "km": 2.9,
+   "min": 7,
+   "tel": "",
+   "dir": "Avenida del Parque S/N, La Quebrada",
+   "24h": false,
+   "maps": "https://www.google.com/maps/dir/?api=1&origin=19.5839346,-99.2030547&destination=19.597291,-99.188261"
+  },
+  {
+   "n": 4,
+   "cat": "farmacia",
+   "nombre": "Benavides",
+   "km": 3.0,
+   "min": 7,
+   "tel": "",
+   "dir": "",
+   "24h": false,
+   "maps": "https://www.google.com/maps/dir/?api=1&origin=19.5839346,-99.2030547&destination=19.600931,-99.192108"
+  },
+  {
+   "n": 5,
+   "cat": "farmacia",
+   "nombre": "Farmacias del Ahorro",
+   "km": 4.0,
+   "min": 10,
+   "tel": "",
+   "dir": "",
+   "24h": false,
+   "maps": "https://www.google.com/maps/dir/?api=1&origin=19.5839346,-99.2030547&destination=19.557066,-99.204416"
+  }
+ ]
+}
