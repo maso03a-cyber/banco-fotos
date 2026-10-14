@@ -25,10 +25,36 @@ R = 4500                      # radio de busqueda en metros
 AZUL, ROJO, VERDE = "#009DE0", "#E5484D", "#12A150"
 CALLES = {"motorway": (3.6, "#D3DAE3"), "trunk": (3.2, "#D3DAE3"), "primary": (2.6, "#D9DFE7"),
           "secondary": (2.0, "#DEE4EB"), "tertiary": (1.5, "#E3E8EE")}
-NO_SIRVE = re.compile(r"veterinari|dental|dentist|laborator|optica|óptica|psicolog|spa\b|estetica|estética|"
-                      r"nutri|fisioterap|rehabilit|consultorio|s\.a\.|s\. de r\.l|de c\.v", re.I)
-URGENCIAS = re.compile(r"cruz roja|urgencia|emergenc|hospital|sanatorio|imss|issste|ángeles|angeles|"
-                       r"star m[eé]dica|m[eé]dica sur|christus|san jos[eé]|puerta de hierro|abc\b", re.I)
+NO_SIRVE = re.compile(r"veterinari|dental|dentist|laborator|logistic|distribu|optica|óptica|oftalm|ojos|visi[oó]n|"
+                      r"de la luz|psicolog|psiquiatr|spa\b|estetica|estética|nutri|fisioterap|rehabilit|consultorio|"
+                      r"cirug[ií]a pl[aá]stica|fertilidad|s\.a\.|s\. de r\.l|de c\.v", re.I)
+# Hospitales privados con urgencias 24 h (primera opcion para un grupo de alumnos)
+PRIVADOS = re.compile(r"\babc\b|[aá]ngeles|star m[eé]dica|m[eé]dica sur|hospital espa[nñ]ol|san [aá]ngel inn|christus|"
+                      r"puerta de hierro|\bhmg\b|hospitales mac|\bmac\b|galenia|san jos[eé]|amerimed|hospital country|"
+                      r"real san jos[eé]|m[eé]xico americano|joya|dalinde|santa fe|hospital mig|torre m[eé]dica|"
+                      r"sanatorio|hospital privado", re.I)
+CRUZ_ROJA = re.compile(r"cruz roja", re.I)
+PRIMER_NIVEL = re.compile(r"c\.?\s?m\.?\s?f\b|u\.?\s?m\.?\s?f\b|medicina familiar|centro de salud|dispensario|unidad m[eé]dica", re.I)
+
+
+def nivel(l):
+    """0 = privado con urgencias, 1 = Cruz Roja / urgencias, 2 = hospital general, 3 = clinica, 4 = primer nivel."""
+    n = l["nombre"]
+    if PRIMER_NIVEL.search(n):
+        return 4
+    if PRIVADOS.search(n):
+        return 0
+    if CRUZ_ROJA.search(n) or l["emerg"]:
+        return 1
+    if l["tipo"] == "hospital":
+        return 2
+    return 3
+
+
+def normal(n):
+    import unicodedata
+    n = unicodedata.normalize("NFD", n.lower())
+    return re.sub(r"[^a-z0-9 ]", "", "".join(c for c in n if unicodedata.category(c) != "Mn")).strip()
 
 
 def log(msg):
@@ -108,13 +134,13 @@ def mapa(carpeta, lat, lng, nombre_hotel, tel_hotel):
         lugar = {"nombre": n, "x": x, "y": y, "d": d, "lat": la, "lng": lo,
                  "tel": t.get("phone") or t.get("contact:phone") or "",
                  "dir": direccion(t), "24h": "24/7" in (t.get("opening_hours") or ""),
-                 "urg": t.get("emergency") == "yes" or bool(URGENCIAS.search(n)), "tipo": tipo}
+                 "emerg": t.get("emergency") == "yes", "tipo": tipo}
         (farm if tipo == "pharmacy" else hosp).append(lugar)
 
     def unicos(lista, cupo, clave):
         out, vistos = [], set()
         for l in sorted(lista, key=clave):
-            c = l["nombre"].lower()
+            c = normal(l["nombre"])
             if c in vistos:
                 continue
             vistos.add(c)
@@ -124,13 +150,13 @@ def mapa(carpeta, lat, lng, nombre_hotel, tel_hotel):
         return out
 
     # Hospitales: primero los que atienden urgencias (hospital > clinica), luego lo mas cercano.
-    hs = unicos(hosp, 3, lambda l: (0 if l["tipo"] == "hospital" else 1, 0 if l["urg"] else 1, l["d"]) if l["d"] < 3500
-                else (2, 0, l["d"]))
+    # Hospitales: el privado con urgencias mas cercano, luego Cruz Roja / hospital general; lo de primer nivel al final.
+    hs = unicos([l for l in hosp if l["d"] < 4200], 3, lambda l: (nivel(l), l["d"]))
     hs = sorted(hs, key=lambda l: l["d"])
     # Farmacias: las 2 mas cercanas, y una 24 h si existe a menos de 2 km.
     fs = unicos(farm, 2, lambda l: l["d"])
     f24 = [l for l in unicos([l for l in farm if l["24h"]], 1, lambda l: l["d"]) if l["d"] < 2000]
-    if f24 and f24[0]["nombre"].lower() not in [f["nombre"].lower() for f in fs]:
+    if f24 and normal(f24[0]["nombre"]) not in [normal(f["nombre"]) for f in fs]:
         fs = fs[:1] + f24
     elegidos = [dict(l, cat="hospital") for l in hs] + [dict(l, cat="farmacia") for l in fs]
     for i, l in enumerate(elegidos, 1):
@@ -153,6 +179,18 @@ def mapa(carpeta, lat, lng, nombre_hotel, tel_hotel):
         w, col = CALLES[h]
         ax.plot([p[0] for p in g], [p[1] for p in g], color=col, lw=w, zorder=2, solid_capstyle="round")
     esc = DX / 600
+    puestos = [(0.0, 0.0, 46 * esc)]
+    for l in elegidos:
+        for _ in range(12):
+            choca = [p for p in puestos if math.hypot(l["x"] - p[0], l["y"] - p[1]) < (30 * esc + p[2]) * 1.05]
+            if not choca:
+                break
+            p = choca[0]
+            dx, dy = l["x"] - p[0], l["y"] - p[1]
+            dd = math.hypot(dx, dy) or 1.0
+            l["x"] += dx / dd * 18 * esc
+            l["y"] += dy / dd * 18 * esc
+        puestos.append((l["x"], l["y"], 30 * esc))
     for l in elegidos:
         col = ROJO if l["cat"] == "hospital" else VERDE
         ax.add_patch(Circle((l["x"], l["y"]), 30 * esc, color=col, ec="white", lw=2.5, zorder=6))
