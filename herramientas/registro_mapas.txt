@@ -40,3 +40,19 @@ Cdmx/Fiesta_Inn_Centro_Historico: emergencia 3 hospitales, 2 farmacias
   overpass https://overpass-api.de/api/interpreter: 502 Server Error: Bad Gateway for url: https://overpass-api.de/api/interpreter
   overpass https://overpass.kumi.systems/api/interpreter: HTTPSConnectionPool(host='overpass.kumi.systems', port=443): Read timed out. (read timeout=180)
 Cdmx/Sleep_Inn_Santa_Fe: emergencia 3 hospitales, 2 farmacias
+  overpass https://overpass-api.de/api/interpreter: 504 Server Error: Gateway Timeout for url: https://overpass-api.de/api/interpreter
+  overpass https://overpass.kumi.systems/api/interpreter: HTTPSConnectionPool(host='overpass.kumi.systems', port=443): Read timed out. (read timeout=180)
+Cdmx/Holiday_Inn_Express_Sur: emergencia 3 hospitales, 2 farmacias
+Guadalajara/Best_Western_Plus: emergencia 3 hospitales, 2 farmacias
+  overpass https://overpass-api.de/api/interpreter: 504 Server Error: Gateway Timeout for url: https://overpass-api.de/api/interpreter
+  overpass https://overpass.kumi.systems/api/interpreter: HTTPSConnectionPool(host='overpass.kumi.systems', port=443): Read timed out. (read timeout=180)
+  overpass https://overpass-api.de/api/interpreter: 504 Server Error: Gateway Timeout for url: https://overpass-api.de/api/interpreter
+  overpass https://overpass.kumi.systems/api/interpreter: 504 Server Error: Gateway Timeout for url: https://overpass.kumi.systems/api/interpreter
+Guadalajara/Sleep_Inn: emergencia 3 hospitales, 2 farmacias
+Guadalajara/Holiday_Inn_Express_Expo: emergencia 3 hospitales, 2 farmacias
+Cdmx/Paragon_de_Santa_Fe: emergencia 3 hospitales, 2 farmacias
+Cdmx/Ramada_Perinorte: emergencia 3 hospitales, 2 farmacias
+  overpass https://overpass-api.de/api/interpreter: 504 Server Error: Gateway Timeout for url: https://overpass-api.de/api/interpreter
+  overpass https://overpass.kumi.systems/api/interpreter: 504 Server Error: Gateway Timeout for url: https://overpass.kumi.systems/api/interpreter
+Cdmx/Fiesta_Inn_Centro_Historico: emergencia 3 hospitales, 2 farmacias
+Cdmx/Sleep_Inn_Santa_Fe: emergencia 3 hospitales, 2 farmacias
