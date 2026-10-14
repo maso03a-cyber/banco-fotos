@@ -26,7 +26,7 @@ AZUL, ROJO, VERDE = "#009DE0", "#E5484D", "#12A150"
 CALLES = {"motorway": (3.6, "#D3DAE3"), "trunk": (3.2, "#D3DAE3"), "primary": (2.6, "#D9DFE7"),
           "secondary": (2.0, "#DEE4EB"), "tertiary": (1.5, "#E3E8EE")}
 NO_SIRVE = re.compile(r"veterinari|dental|dentist|laborator|logistic|distribu|optica|óptica|oftalm|ojos|visi[oó]n|"
-                      r"de la luz|psicolog|psiquiatr|spa\b|estetica|estética|nutri|fisioterap|rehabilit|consultorio|"
+                      r"de la luz|patronato|aesthetic|allergan|psicolog|psiquiatr|spa\b|estetica|estética|nutri|fisioterap|rehabilit|consultorio|"
                       r"cirug[ií]a pl[aá]stica|fertilidad|s\.a\.|s\. de r\.l|de c\.v", re.I)
 # Hospitales privados con urgencias 24 h (primera opcion para un grupo de alumnos)
 PRIVADOS = re.compile(r"\babc\b|[aá]ngeles|star m[eé]dica|m[eé]dica sur|hospital espa[nñ]ol|san [aá]ngel inn|christus|"
@@ -49,6 +49,15 @@ def nivel(l):
     if l["tipo"] == "hospital":
         return 2
     return 3
+
+
+CADENAS = re.compile(r"\babc\b|[aá]ngeles|star m[eé]dica|m[eé]dica sur|san jos[eé]|puerta de hierro|christus|"
+                     r"\bimss\b|issste|cruz roja|hospital espa[nñ]ol|galenia|amerimed|\bmac\b|\bhmg\b", re.I)
+
+
+def cadena(n):
+    m = CADENAS.search(n)
+    return normal(m.group(0)) if m else normal(n)
 
 
 def normal(n):
@@ -132,7 +141,7 @@ def mapa(carpeta, lat, lng, nombre_hotel, tel_hotel):
         (x, y), (la, lo) = c, ll
         d = math.hypot(x, y)
         lugar = {"nombre": n, "x": x, "y": y, "d": d, "lat": la, "lng": lo,
-                 "tel": t.get("phone") or t.get("contact:phone") or "",
+                 "tel": re.sub(r"\.0$", "", str(t.get("phone") or t.get("contact:phone") or "")),
                  "dir": direccion(t), "24h": "24/7" in (t.get("opening_hours") or ""),
                  "emerg": t.get("emergency") == "yes", "tipo": tipo}
         (farm if tipo == "pharmacy" else hosp).append(lugar)
@@ -151,7 +160,20 @@ def mapa(carpeta, lat, lng, nombre_hotel, tel_hotel):
 
     # Hospitales: primero los que atienden urgencias (hospital > clinica), luego lo mas cercano.
     # Hospitales: el privado con urgencias mas cercano, luego Cruz Roja / hospital general; lo de primer nivel al final.
-    hs = unicos([l for l in hosp if l["d"] < 4200], 3, lambda l: (nivel(l), l["d"]))
+    # Hospitales: el privado con urgencias mas cercano y luego opciones de OTRAS cadenas (no 3 sucursales del mismo).
+    cand = sorted([l for l in hosp if l["d"] < 4200], key=lambda l: (nivel(l), l["d"]))
+    hs, usadas, vistos = [], set(), set()
+    for l in cand:
+        if cadena(l["nombre"]) in usadas or normal(l["nombre"]) in vistos:
+            continue
+        hs.append(l); usadas.add(cadena(l["nombre"])); vistos.add(normal(l["nombre"]))
+        if len(hs) == 3:
+            break
+    for l in cand:
+        if len(hs) == 3:
+            break
+        if normal(l["nombre"]) not in vistos:
+            hs.append(l); vistos.add(normal(l["nombre"]))
     hs = sorted(hs, key=lambda l: l["d"])
     # Farmacias: las 2 mas cercanas, y una 24 h si existe a menos de 2 km.
     fs = unicos(farm, 2, lambda l: l["d"])
