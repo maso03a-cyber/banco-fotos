@@ -9,3 +9,34 @@ Guadalajara/Holiday_Inn_Express_Expo: 10 lugares
 Cdmx/Paragon_de_Santa_Fe: 11 lugares
 Cdmx/Paragon_de_Santa_Fe: 11 lugares
 Cdmx/Paragon_de_Santa_Fe: 10 lugares
+  overpass https://overpass-api.de/api/interpreter: 504 Server Error: Gateway Timeout for url: https://overpass-api.de/api/interpreter
+  overpass https://overpass.kumi.systems/api/interpreter: HTTPSConnectionPool(host='overpass.kumi.systems', port=443): Read timed out. (read timeout=150)
+Cdmx/Ramada_Perinorte: 1 lugares
+Cdmx/Fiesta_Inn_Centro_Historico: 11 lugares
+  overpass https://overpass-api.de/api/interpreter: 504 Server Error: Gateway Timeout for url: https://overpass-api.de/api/interpreter
+  overpass https://overpass.kumi.systems/api/interpreter: HTTPSConnectionPool(host='overpass.kumi.systems', port=443): Read timed out. (read timeout=150)
+  overpass https://overpass-api.de/api/interpreter: 504 Server Error: Gateway Timeout for url: https://overpass-api.de/api/interpreter
+Cdmx/Sleep_Inn_Santa_Fe: 9 lugares
+  overpass https://overpass-api.de/api/interpreter: 504 Server Error: Gateway Timeout for url: https://overpass-api.de/api/interpreter
+  overpass https://overpass.kumi.systems/api/interpreter: HTTPSConnectionPool(host='overpass.kumi.systems', port=443): Read timed out. (read timeout=180)
+  overpass https://overpass-api.de/api/interpreter: 504 Server Error: Gateway Timeout for url: https://overpass-api.de/api/interpreter
+Cdmx/Holiday_Inn_Express_Sur: emergencia 3 hospitales, 2 farmacias
+Guadalajara/Best_Western_Plus: emergencia 3 hospitales, 2 farmacias
+Guadalajara/Sleep_Inn: emergencia 3 hospitales, 2 farmacias
+  overpass https://overpass-api.de/api/interpreter: 504 Server Error: Gateway Timeout for url: https://overpass-api.de/api/interpreter
+  overpass https://overpass.kumi.systems/api/interpreter: 504 Server Error: Gateway Timeout for url: https://overpass.kumi.systems/api/interpreter
+  overpass https://overpass-api.de/api/interpreter: 504 Server Error: Gateway Timeout for url: https://overpass-api.de/api/interpreter
+  overpass https://overpass.kumi.systems/api/interpreter: 504 Server Error: Gateway Timeout for url: https://overpass.kumi.systems/api/interpreter
+Guadalajara/Holiday_Inn_Express_Expo: emergencia 3 hospitales, 2 farmacias
+  overpass https://overpass-api.de/api/interpreter: 504 Server Error: Gateway Timeout for url: https://overpass-api.de/api/interpreter
+  overpass https://overpass.kumi.systems/api/interpreter: HTTPSConnectionPool(host='overpass.kumi.systems', port=443): Read timed out. (read timeout=180)
+Cdmx/Paragon_de_Santa_Fe: emergencia 3 hospitales, 2 farmacias
+Cdmx/Ramada_Perinorte: emergencia 3 hospitales, 2 farmacias
+  overpass https://overpass-api.de/api/interpreter: 504 Server Error: Gateway Timeout for url: https://overpass-api.de/api/interpreter
+  overpass https://overpass.kumi.systems/api/interpreter: 504 Server Error: Gateway Timeout for url: https://overpass.kumi.systems/api/interpreter
+Cdmx/Fiesta_Inn_Centro_Historico: emergencia 3 hospitales, 2 farmacias
+  overpass https://overpass-api.de/api/interpreter: 504 Server Error: Gateway Timeout for url: https://overpass-api.de/api/interpreter
+  overpass https://overpass.kumi.systems/api/interpreter: 504 Server Error: Gateway Timeout for url: https://overpass.kumi.systems/api/interpreter
+  overpass https://overpass-api.de/api/interpreter: 502 Server Error: Bad Gateway for url: https://overpass-api.de/api/interpreter
+  overpass https://overpass.kumi.systems/api/interpreter: HTTPSConnectionPool(host='overpass.kumi.systems', port=443): Read timed out. (read timeout=180)
+Cdmx/Sleep_Inn_Santa_Fe: emergencia 3 hospitales, 2 farmacias

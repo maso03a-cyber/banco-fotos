@@ -1,0 +1,91 @@
+{
+ "hotel": "Fiesta Inn Centro Histórico",
+ "lat": 19.4348474,
+ "lng": -99.1466855,
+ "categorias": {
+  "salud": {
+   "titulo": "Farmacias y salud",
+   "color": "#12A150"
+  },
+  "tiendas": {
+   "titulo": "Tiendas",
+   "color": "#E8A317"
+  },
+  "comida": {
+   "titulo": "Para comer",
+   "color": "#E0533D"
+  },
+  "plazas": {
+   "titulo": "Plazas comerciales",
+   "color": "#7A5CD6"
+  }
+ },
+ "lugares": [
+  {
+   "n": 1,
+   "cat": "salud",
+   "nombre": "Farmacias de Descuento",
+   "min": 6
+  },
+  {
+   "n": 2,
+   "cat": "salud",
+   "nombre": "Farmacias Similares",
+   "min": 10
+  },
+  {
+   "n": 3,
+   "cat": "salud",
+   "nombre": "Policlínica",
+   "min": 6
+  },
+  {
+   "n": 4,
+   "cat": "tiendas",
+   "nombre": "Oxxo",
+   "min": 2
+  },
+  {
+   "n": 5,
+   "cat": "tiendas",
+   "nombre": "Circle K",
+   "min": 2
+  },
+  {
+   "n": 6,
+   "cat": "tiendas",
+   "nombre": "Parque Alameda",
+   "min": 1
+  },
+  {
+   "n": 7,
+   "cat": "comida",
+   "nombre": "Starbucks",
+   "min": 1
+  },
+  {
+   "n": 8,
+   "cat": "comida",
+   "nombre": "Los Dones",
+   "min": 1
+  },
+  {
+   "n": 9,
+   "cat": "comida",
+   "nombre": "Taquería El Caifán",
+   "min": 1
+  },
+  {
+   "n": 10,
+   "cat": "plazas",
+   "nombre": "Mercado de Artesanías de La Ciudadela",
+   "min": 8
+  },
+  {
+   "n": 11,
+   "cat": "plazas",
+   "nombre": "Mercado de San Juan Ernesto Pugibet",
+   "min": 9
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+{
+ "hotel": "Ramada by Wyndham Ciudad de México Perinorte",
+ "lat": 19.5839346,
+ "lng": -99.2030547,
+ "categorias": {
+  "salud": {
+   "titulo": "Farmacias y salud",
+   "color": "#12A150"
+  },
+  "tiendas": {
+   "titulo": "Tiendas",
+   "color": "#E8A317"
+  },
+  "comida": {
+   "titulo": "Para comer",
+   "color": "#E0533D"
+  },
+  "plazas": {
+   "titulo": "Plazas comerciales",
+   "color": "#7A5CD6"
+  }
+ },
+ "lugares": [
+  {
+   "n": 1,
+   "cat": "comida",
+   "nombre": "Cooperativa",
+   "min": 5
+  }
+ ]
+}

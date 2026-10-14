@@ -1,0 +1,64 @@
+{
+ "hotel": "Holiday Inn Express Guadalajara Expo",
+ "tel_hotel": "",
+ "lat": 20.6500538,
+ "lng": -103.3992137,
+ "generado": "2026-10-14",
+ "lugares": [
+  {
+   "n": 1,
+   "cat": "hospital",
+   "nombre": "Hospital Santa María Chapalita",
+   "km": 2.9,
+   "min": 7,
+   "tel": "",
+   "dir": "",
+   "24h": false,
+   "maps": "https://www.google.com/maps/dir/?api=1&origin=20.6500538,-103.3992137&destination=20.667201,-103.408493"
+  },
+  {
+   "n": 2,
+   "cat": "hospital",
+   "nombre": "Real San José",
+   "km": 3.6,
+   "min": 9,
+   "tel": "+52 33 1078 8900",
+   "dir": "Avenida Lázaro Cárdenas 4149",
+   "24h": false,
+   "maps": "https://www.google.com/maps/dir/?api=1&origin=20.6500538,-103.3992137&destination=20.672550,-103.409239"
+  },
+  {
+   "n": 3,
+   "cat": "hospital",
+   "nombre": "Clinica 34 del IMSS",
+   "km": 3.7,
+   "min": 9,
+   "tel": "",
+   "dir": "",
+   "24h": false,
+   "maps": "https://www.google.com/maps/dir/?api=1&origin=20.6500538,-103.3992137&destination=20.638200,-103.376312"
+  },
+  {
+   "n": 4,
+   "cat": "farmacia",
+   "nombre": "Farmacia Guadalajara",
+   "km": 0.3,
+   "min": 2,
+   "tel": "",
+   "dir": "",
+   "24h": false,
+   "maps": "https://www.google.com/maps/dir/?api=1&origin=20.6500538,-103.3992137&destination=20.649839,-103.401582"
+  },
+  {
+   "n": 5,
+   "cat": "farmacia",
+   "nombre": "Farmacia Benavides",
+   "km": 0.4,
+   "min": 2,
+   "tel": "",
+   "dir": "",
+   "24h": false,
+   "maps": "https://www.google.com/maps/dir/?api=1&origin=20.6500538,-103.3992137&destination=20.650910,-103.401656"
+  }
+ ]
+}

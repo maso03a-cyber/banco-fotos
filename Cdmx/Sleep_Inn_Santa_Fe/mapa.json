@@ -1,0 +1,79 @@
+{
+ "hotel": "Sleep Inn Mexico City (Santa Fe)",
+ "lat": 19.3629074,
+ "lng": -99.2830581,
+ "categorias": {
+  "salud": {
+   "titulo": "Farmacias y salud",
+   "color": "#12A150"
+  },
+  "tiendas": {
+   "titulo": "Tiendas",
+   "color": "#E8A317"
+  },
+  "comida": {
+   "titulo": "Para comer",
+   "color": "#E0533D"
+  },
+  "plazas": {
+   "titulo": "Plazas comerciales",
+   "color": "#7A5CD6"
+  }
+ },
+ "lugares": [
+  {
+   "n": 1,
+   "cat": "salud",
+   "nombre": "Farmacias Similares",
+   "min": 8
+  },
+  {
+   "n": 2,
+   "cat": "salud",
+   "nombre": "Codifarma",
+   "min": 13
+  },
+  {
+   "n": 3,
+   "cat": "salud",
+   "nombre": "Acupuntura Doctor Ricardo",
+   "min": 5
+  },
+  {
+   "n": 4,
+   "cat": "tiendas",
+   "nombre": "Abarrotes nva era",
+   "min": 7
+  },
+  {
+   "n": 5,
+   "cat": "tiendas",
+   "nombre": "Oxxo",
+   "min": 8
+  },
+  {
+   "n": 6,
+   "cat": "tiendas",
+   "nombre": "Miscelania Chayito",
+   "min": 6
+  },
+  {
+   "n": 7,
+   "cat": "comida",
+   "nombre": "Pesacaditos los Borrachitos",
+   "min": 4
+  },
+  {
+   "n": 8,
+   "cat": "comida",
+   "nombre": "Vips",
+   "min": 7
+  },
+  {
+   "n": 9,
+   "cat": "comida",
+   "nombre": "Taquería los gueros",
+   "min": 8
+  }
+ ]
+}
