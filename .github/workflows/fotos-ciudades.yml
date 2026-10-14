@@ -1,7 +1,7 @@
 name: Fotos de ciudades y mapas de hoteles
 on:
   push:
-    paths: [ciudades.txt, hoteles.txt, herramientas/mapa_emergencia.py]
+    paths: [ciudades.txt, hoteles.txt, herramientas/mapa_emergencia.py, .github/workflows/fotos-ciudades.yml]
   workflow_dispatch:
 permissions:
   contents: write
@@ -27,4 +27,5 @@ jobs:
           git config user.email "bot@users.noreply.github.com"
           git add -A
           git diff --cached --quiet || git commit -m "Fotos de ciudades, mapas de hoteles y de emergencia"
+          git pull --rebase --autostash || true
           git push
