@@ -1,7 +1,7 @@
 name: Fotos de ciudades y mapas de hoteles
 on:
   push:
-    paths: [ciudades.txt, hoteles.txt]
+    paths: [ciudades.txt, hoteles.txt, herramientas/mapa_emergencia.py]
   workflow_dispatch:
 permissions:
   contents: write
@@ -19,10 +19,12 @@ jobs:
         run: python herramientas/bajar_fotos_ciudad.py
       - name: Mapas de alrededores de los hoteles
         run: python herramientas/mapa_hotel.py
+      - name: Mapas de emergencia (hospitales y farmacias) para la ficha de emergencia
+        run: python herramientas/mapa_emergencia.py
       - name: Guardar en el repo
         run: |
           git config user.name "banco-fotos-bot"
           git config user.email "bot@users.noreply.github.com"
           git add -A
-          git diff --cached --quiet || git commit -m "Fotos de ciudades nuevas"
+          git diff --cached --quiet || git commit -m "Fotos de ciudades, mapas de hoteles y de emergencia"
           git push

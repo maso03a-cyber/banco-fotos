@@ -6,3 +6,6 @@ Guadalajara/Best_Western_Plus | 20.6741009,-103.3426558 | Best Western Plus Gran
 Guadalajara/Sleep_Inn | 20.6812326,-103.4338116 | Sleep Inn Guadalajara Galerías
 Guadalajara/Holiday_Inn_Express_Expo | 20.6500538,-103.3992137 | Holiday Inn Express Guadalajara Expo
 Cdmx/Paragon_de_Santa_Fe | 19.3580166,-99.2780809 | The Paragon Hotel Santa Fe
+Cdmx/Ramada_Perinorte | 19.5839346,-99.2030547 | Ramada by Wyndham Ciudad de México Perinorte
+Cdmx/Fiesta_Inn_Centro_Historico | 19.4348474,-99.1466855 | Fiesta Inn Centro Histórico
+Cdmx/Sleep_Inn_Santa_Fe | 19.3629074,-99.2830581 | Sleep Inn Mexico City (Santa Fe)
