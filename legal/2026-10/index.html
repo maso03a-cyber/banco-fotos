@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Reglamento y Responsiva · College Traveler</title>
+<meta name="description" content="Reglamento oficial de viajes y Carta responsiva de College Traveler. Versión 2026-10.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: documento legal de una columna, con índice fijo a la izquierda en escritorio */
+:root{
+  --bg:#f6f8fb; --paper:#ffffff; --ink:#14142b; --muted:#5a6276; --line:#e1e6ee;
+  --blue:#009de0; --blue-soft:#e6f5fc; --navy:#14142b;
+  --f-display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-body:"IBM Plex Sans","Segoe UI",Roboto,Arial,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#0e1120; --paper:#161a2c; --ink:#e9ecf5; --muted:#9aa3b8; --line:#272d45;
+  --blue:#3bb6ee; --blue-soft:#132b42; --navy:#e9ecf5; color-scheme:dark}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 var(--f-body);-webkit-text-size-adjust:100%}
+a{color:var(--blue)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 max(18px,env(safe-area-inset-left)) 64px max(18px,env(safe-area-inset-right))}
+header.top{padding:28px 0 18px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.logo{height:22px;display:block}
+.logo.dark{display:none}
+@media (prefers-color-scheme: dark){.logo.light{display:none}.logo.dark{display:block}}
+.ver{font:500 12px/1 var(--f-mono);white-space:nowrap;letter-spacing:.04em;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:7px 12px;background:var(--paper)}
+.hero{padding:34px 0 30px;border-bottom:1px solid var(--line)}
+.eyebrow{font:500 12px/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+h1{font:800 clamp(30px,5.4vw,52px)/1.05 var(--f-display);letter-spacing:-.015em;margin:12px 0 14px;text-wrap:balance}
+.lead{max-width:62ch;color:var(--muted);margin:0;font-size:17px}
+.grid{display:grid;grid-template-columns:230px 1fr;gap:48px;padding-top:36px}
+nav.toc{position:sticky;top:20px;align-self:start;font-size:14px}
+nav.toc b{display:block;font:500 11px/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+nav.toc ol{list-style:none;margin:0 0 22px;padding:0;display:flex;flex-direction:column;gap:2px}
+nav.toc a{display:block;padding:5px 10px;border-left:2px solid var(--line);color:var(--ink);text-decoration:none}
+nav.toc a:hover{border-color:var(--blue);color:var(--blue)}
+main{min-width:0}
+section.doc{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:clamp(22px,4vw,44px);margin-bottom:28px}
+.dochead{display:flex;flex-direction:column;gap:6px;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+h2{font:800 clamp(24px,3.4vw,32px)/1.15 var(--f-display);margin:0;text-wrap:balance}
+.sub{color:var(--muted);margin:0}
+.obj{background:var(--blue-soft);border-radius:10px;padding:14px 16px;margin:0 0 26px}
+.obj b{font:600 12px/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--blue);display:block;margin-bottom:6px}
+.rule{display:grid;grid-template-columns:52px 1fr;gap:6px 14px;padding:18px 0;border-top:1px solid var(--line)}
+.rule:first-of-type{border-top:0}
+.num{font:700 15px/1.6 var(--f-mono);color:var(--blue)}
+h3{font:700 17px/1.4 var(--f-display);margin:0 0 4px;letter-spacing:.005em}
+.rule p{margin:0;max-width:68ch}
+.accept{margin-top:24px;padding:16px 18px;border-left:3px solid var(--blue);background:var(--bg);border-radius:0 10px 10px 0}
+.accept p{margin:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:18px 0}
+.field{border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.field b{display:block;font:500 11px/1.2 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.field span{font-size:14px}
+.how ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px}
+.meta{font:400 13px/1.6 var(--f-mono);color:var(--muted);word-break:break-all}
+footer{margin-top:10px;padding-top:22px;border-top:1px solid var(--line);font-size:14px;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px 22px}
+@media (max-width:860px){.grid{grid-template-columns:1fr;gap:20px}nav.toc{position:static;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px}nav.toc ol{margin-bottom:12px}}
+@media (max-width:480px){.rule{grid-template-columns:38px 1fr}.ver{font-size:10.5px;padding:6px 10px}}
+@media print{nav.toc,.ver{display:none}.grid{display:block}section.doc{border:0;padding:0;break-inside:auto}body{background:#fff}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <a href="https://collegetraveler.com" aria-label="College Traveler">
+    <img class="logo light" src="../../marca/logo-transparente.png" alt="College Traveler" width="172" height="22">
+    <img class="logo dark" src="../../marca/logo-claro.png" alt="College Traveler" width="172" height="22">
+  </a>
+  <span class="ver">Versión 2026-10 · vigente desde el 16 oct 2026</span>
+</header>
+
+<div class="hero">
+  <span class="eyebrow">Documentos del viajero</span>
+  <h1>Reglamento oficial y Carta responsiva</h1>
+  <p class="lead">Lee ambos documentos antes de registrarte. Al marcar las casillas del formulario de registro y escribir tu nombre completo, aceptas su contenido tal como aparece en esta versión.</p>
+</div>
+
+<div class="grid">
+  <nav class="toc" aria-label="Índice">
+    <b>Reglamento</b>
+    <ol>
+      <li><a href="#reglamento">Objetivo</a></li>
+      <li><a href="#r01">01–05 · Autoridad y responsabilidad</a></li>
+      <li><a href="#r06">06–09 · Pertenencias, hospedaje y transporte</a></li>
+      <li><a href="#r10">10–15 · Seguro, conducta y pagos</a></li>
+    </ol>
+    <b>Responsiva</b>
+    <ol>
+      <li><a href="#responsiva">Carta responsiva</a></li>
+      <li><a href="#salud">Datos de salud</a></li>
+      <li><a href="#aceptacion">Cómo se acepta</a></li>
+    </ol>
+  </nav>
+
+<main>
+
+<section class="doc" id="reglamento">
+  <div class="dochead">
+    <span class="eyebrow">Reglamento oficial · Viajes y actividades extramuros</span>
+    <h2>Disposiciones Generales para Viajes y Actividades Extramuros</h2>
+    <p class="sub">Aplica a todos los participantes en viajes y actividades organizados por College Traveler.</p>
+  </div>
+  <div class="obj"><b>Objetivo</b>Establecer las reglas de comportamiento que los participantes deberán cumplir durante las actividades y en los viajes oficiales organizados por College Traveler.</div>
+
+  <div class="rule" id="r01"><span class="num">01</span><div><h3>Autoridad</h3><p>El director de la escuela, facultad, área o maestro es la autoridad directa del viaje, y cualquier decisión que tome deberá ser acatada por todos los alumnos participantes.</p></div></div>
+  <div class="rule"><span class="num">02</span><div><h3>Deslinde general de responsabilidad</h3><p>El participante reconoce y acepta que su involucramiento en el viaje es voluntario. Por lo tanto, exime de toda responsabilidad civil, penal, administrativa o de cualquier otra índole a College Traveler, a la institución educativa y al responsable del viaje por cualquier incidente, accidente, lesión, daño material, pérdida o perjuicio que pudiera sufrir, derivado de sus propios actos, omisiones o negligencia. Este deslinde abarca, de manera enunciativa mas no limitativa: consecuencias de actividades no oficiales, pérdida o daño de pertenencias personales y daños causados a terceros.</p></div></div>
+  <div class="rule"><span class="num">03</span><div><h3>Comportamiento</h3><p>Los alumnos se comprometen a mantener una actitud digna y respetuosa, reflejando los principios y valores de su universidad.</p></div></div>
+  <div class="rule"><span class="num">04</span><div><h3>Actividades no oficiales</h3><p>College Traveler se deslinda de toda responsabilidad derivada de la conducta de los alumnos en actividades distintas a las establecidas en el itinerario oficial del viaje.</p></div></div>
+  <div class="rule"><span class="num">05</span><div><h3>Responsabilidad personal</h3><p>Los alumnos son responsables de su persona, sus acciones y las consecuencias de las mismas. Cualquier actividad fuera de los horarios establecidos será bajo su responsabilidad.</p></div></div>
+  <div class="rule" id="r06"><span class="num">06</span><div><h3>Pertenencias</h3><p>Los participantes son responsables del cuidado de sus documentos y artículos personales (boletos de avión, efectivo, identificaciones, etc.). College Traveler no asume ninguna responsabilidad por el daño, menoscabo o pérdida de estos.</p></div></div>
+  <div class="rule"><span class="num">07</span><div><h3>Respeto cultural</h3><p>Los participantes deberán ser respetuosos de los usos y costumbres de las diversas culturas con las que interactúen.</p></div></div>
+  <div class="rule"><span class="num">08</span><div><h3>Hospedaje</h3><p>Los grupos de alumnos deberán quedar separados en hombres y mujeres. Ninguna persona ajena a las registradas en la habitación podrá visitar a algún integrante del grupo. Ningún participante podrá dormir fuera del lugar de hospedaje sin el consentimiento del coordinador.</p></div></div>
+  <div class="rule"><span class="num">09</span><div><h3>Transporte</h3><p>Ningún participante podrá transportarse por separado del grupo, salvo por causas de fuerza mayor y a criterio del responsable.</p></div></div>
+  <div class="rule" id="r10"><span class="num">10</span><div><h3>Seguro de gastos médicos</h3><p>Los participantes se comprometen a contar con un seguro de gastos médicos que cubra cualquier accidente que pudiera sucederle durante el viaje.</p></div></div>
+  <div class="rule"><span class="num">11</span><div><h3>Código de conducta y medidas disciplinarias</h3><p>Se establece una política de tolerancia cero frente al consumo, posesión o distribución de alcohol y sustancias ilegales, así como frente a cualquier forma de acoso, discriminación o violencia. El incumplimiento de este código, o de cualquier otra disposición del presente reglamento, facultará a los organizadores para tomar medidas disciplinarias, incluyendo la expulsión inmediata del viaje. Todos los costos derivados de dicha expulsión (transporte, alojamiento, etc.) correrán exclusivamente por cuenta del participante.</p></div></div>
+  <div class="rule"><span class="num">12</span><div><h3>Política de pagos y reembolsos</h3><p>Una vez realizado el primer pago correspondiente a la inscripción del viaje, no se efectuarán reembolsos bajo ninguna circunstancia.</p></div></div>
+  <div class="rule"><span class="num">13</span><div><h3>Responsabilidad por daños</h3><p>El participante asumirá la responsabilidad total por cualquier daño, perjuicio o afectación que cause a las instalaciones de hoteles, medios de transporte, propiedades de terceros o al patrimonio cultural durante el viaje, obligándose a cubrir los costos de reparación o restitución correspondientes.</p></div></div>
+  <div class="rule"><span class="num">14</span><div><h3>Comunicación oficial</h3><p>Todas las notificaciones y comunicaciones oficiales se realizarán exclusivamente a través del grupo de WhatsApp oficial del viaje. Es obligación del participante mantenerse informado por este medio.</p></div></div>
+  <div class="rule"><span class="num">15</span><div><h3>Modificaciones al itinerario</h3><p>El itinerario está sujeto a modificaciones por condiciones climáticas, logísticas o de fuerza mayor, procurándose ofrecer alternativas de valor equivalente.</p></div></div>
+
+  <div class="accept"><p><b>Aceptación.</b> La aceptación de este documento constituye la manifestación de que el participante conoce, comprende y acepta la totalidad de las disposiciones generales aquí descritas, comprometiéndose a cumplirlas durante el viaje.</p></div>
+</section>
+
+<section class="doc" id="responsiva">
+  <div class="dochead">
+    <span class="eyebrow">Anexo 1 · Carta responsiva</span>
+    <h2>Manifestación de Conocimiento de las Disposiciones Generales para Viajes y Actividades Extramuros</h2>
+  </div>
+  <p>Hago constar que comprendo y acepto todas las Disposiciones Generales para Viajes y Actividades Extramuros de College Traveler y me comprometo a llevarlas a cabo, o recibir las medidas disciplinarias en caso de su incumplimiento.</p>
+  <div class="accept"><p><b>Autorización médica.</b> Hago de su conocimiento que cuento con seguro de gastos médicos que cubre cualquier accidente que pudiera sucederme; no obstante, autorizo que en caso de alguna emergencia médica se me brinden los primeros auxilios y, de resultar necesario, se me traslade a la clínica u hospital más cercano.</p></div>
+  <p class="sub" style="margin-top:20px">Los datos de esta carta se capturan en el formulario de registro y quedan ligados a tu aceptación:</p>
+  <div class="fields">
+    <div class="field"><b>Participante</b><span>Nombre completo y matrícula</span></div>
+    <div class="field"><b>Viaje</b><span>Destino y fechas de salida y regreso</span></div>
+    <div class="field"><b>Contacto de emergencia</b><span>Nombre, parentesco y teléfono</span></div>
+    <div class="field"><b>Información médica</b><span>Alergias, enfermedades actuales y medicamentos</span></div>
+    <div class="field"><b>Lugar y fecha</b><span>Se registran automáticamente al aceptar</span></div>
+  </div>
+</section>
+
+<section class="doc" id="salud">
+  <div class="dochead">
+    <span class="eyebrow">Consentimiento para datos sensibles</span>
+    <h2>Uso de tu información de salud</h2>
+  </div>
+  <p>La información sobre alergias, enfermedades, medicamentos y tu contacto de emergencia es un dato personal sensible. Al aceptar, otorgas tu consentimiento expreso para que College Traveler la recabe y la use únicamente para atenderte en caso de emergencia durante el viaje: se incluye en la ficha de emergencia que recibe el maestro o responsable del grupo y se comparte, si es necesario, con el personal médico que te atienda. No se usa para ningún otro fin. Puedes consultar el aviso de privacidad completo o pedir la corrección o eliminación de tus datos escribiendo a <a href="mailto:contacto@collegetraveler.com">contacto@collegetraveler.com</a>.</p>
+</section>
+
+<section class="doc how" id="aceptacion">
+  <div class="dochead">
+    <span class="eyebrow">Cómo se acepta</span>
+    <h2>Tu aceptación es digital</h2>
+    <p class="sub">No necesitas imprimir, firmar a mano ni subir ningún documento.</p>
+  </div>
+  <ol>
+    <li>Lee este reglamento y la carta responsiva.</li>
+    <li>En el formulario de registro de tu viaje marca <b>“Acepto el Reglamento”</b>, <b>“Acepto la Responsiva”</b> y el consentimiento de datos de salud.</li>
+    <li>Escribe tu <b>nombre completo</b>, igual que en tu identificación. Funciona como tu firma.</li>
+    <li>Guardamos tu nombre, matrícula, correo, la fecha y la versión de este documento que aceptaste (2026-10).</li>
+  </ol>
+  <p class="sub" style="margin-top:18px">Si el participante es menor de edad, la aceptación debe hacerla su padre, madre o tutor.</p>
+  <p class="meta" style="margin-top:22px">Documento: reglamento-responsiva · versión 2026-10 · esta versión no se modifica; cualquier cambio se publica como una versión nueva con otra dirección.</p>
+</section>
+
+<footer>
+  <span>College Traveler · Viajes Académicos Profesionales</span>
+  <a href="https://collegetraveler.com">collegetraveler.com</a>
+  <span>contacto@collegetraveler.com</span>
+  <span>+52 228 272 8556</span>
+</footer>
+
+</main>
+</div>
+</div>
+</body>
+</html>
