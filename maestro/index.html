@@ -1,0 +1,132 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Panel del maestro · College Traveler</title>
+<link rel="icon" href="/marca/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--azul:#009DE0;--tinta:#14142B;--ink2:#3C4250;--gris:#5A6472;--gris2:#8A93A1;--linea:#E7EBF0;--bg:#F6F8FA;--verde:#12805C;--ambar:#B26B00;--rojo:#C2410C}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);font-family:Lato,Helvetica,Arial,sans-serif;color:var(--tinta);-webkit-font-smoothing:antialiased;line-height:1.45}
+a{color:var(--azul)}
+.w{max-width:1080px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid var(--linea)}
+header .w{padding-top:22px;padding-bottom:26px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{font-weight:900;letter-spacing:4px;font-size:13px}.logo b{color:var(--azul)}
+.tag{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gris2)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:44px;line-height:1.05;margin:22px 0 6px}
+.meta{color:var(--gris);font-size:15.5px}
+.datos{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:20px;border:1px solid var(--linea);border-radius:12px;overflow:hidden}
+.datos>div{padding:14px 16px;border-right:1px solid var(--linea)}.datos>div:last-child{border-right:0}
+.datos .l{font-size:12px;color:var(--gris2)}.datos .v{font-size:15.5px;font-weight:700;margin-top:2px}
+.datos .v small{display:block;font-weight:400;color:var(--gris);font-size:13px}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:24px 0 8px}
+.kpi{background:#fff;border:1px solid var(--linea);border-radius:12px;padding:16px}
+.kpi .n{font-family:'Cormorant Garamond',serif;font-size:40px;line-height:1}
+.kpi .l{font-size:13px;color:var(--gris);margin-top:4px}
+.kpi.ok .n{color:var(--verde)}.kpi.mal .n{color:var(--rojo)}.kpi.az .n{color:var(--azul)}
+.bar{height:6px;border-radius:3px;background:var(--linea);overflow:hidden;margin-top:10px}.bar i{display:block;height:100%;background:var(--azul)}
+.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:22px 0 12px}
+.chip{border:1px solid var(--linea);background:#fff;border-radius:20px;padding:8px 14px;font:inherit;font-size:14px;cursor:pointer;color:var(--ink2)}
+.chip.on{border-color:var(--azul);color:var(--azul);font-weight:700;background:#F2FAFE}
+.buscar{flex:1;min-width:200px;font:inherit;font-size:15px;padding:9px 14px;border:1px solid var(--linea);border-radius:20px;outline:none;background:#fff}
+.buscar:focus{border-color:var(--azul)}
+.lista{background:#fff;border:1px solid var(--linea);border-radius:12px;overflow:hidden}
+.row{display:grid;grid-template-columns:1.6fr .8fr 1.4fr 1.4fr 96px;gap:14px;align-items:center;padding:14px 18px;border-top:1px solid var(--linea)}
+.row:first-child{border-top:0}
+.row.h{background:var(--bg);font-size:12px;color:var(--gris2);letter-spacing:.4px;padding-top:10px;padding-bottom:10px}
+.nm{font-weight:700;font-size:15.5px}.sb{font-size:13px;color:var(--gris)}.mob{display:none}
+.est{display:inline-block;font-size:12.5px;font-weight:700;padding:4px 10px;border-radius:14px}
+.est.Liquidado{color:var(--verde);background:#E8F5EF}.est.Al{color:var(--azul);background:#E6F6FD}.est.Atrasado{color:var(--rojo);background:#FCEDE6}
+.pg{font-size:14px}.pg .bar{margin-top:6px;height:5px}
+.docs{font-size:13.5px}.docs .ok{color:var(--verde);font-weight:700}.docs .no{color:var(--ambar)}
+.wa{font-size:13px;text-decoration:none;border:1px solid var(--linea);border-radius:16px;padding:6px 11px;white-space:nowrap;color:var(--ink2)}
+.wa:hover{border-color:var(--azul);color:var(--azul)}
+.vacio{padding:30px;text-align:center;color:var(--gris2)}
+.compartir{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:26px 0}
+.compartir .c{background:#fff;border:1px solid var(--linea);border-radius:12px;padding:16px 18px}
+.compartir b{display:block;font-size:15px}.compartir span{font-size:13.5px;color:var(--gris)}
+.copy{margin-top:10px;border:1px solid var(--azul);background:#fff;color:var(--azul);font:inherit;font-weight:700;font-size:13.5px;border-radius:8px;padding:8px 14px;cursor:pointer}
+.pie{color:var(--gris2);font-size:13px;padding:10px 0 50px}
+.msg{max-width:520px;margin:80px auto;background:#fff;border:1px solid var(--linea);border-radius:14px;padding:34px 28px;text-align:center}
+.msg h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:32px;margin:14px 0 8px}
+.spin{width:26px;height:26px;border:3px solid var(--linea);border-top-color:var(--azul);border-radius:50%;animation:g .8s linear infinite;margin:0 auto}
+@keyframes g{to{transform:rotate(360deg)}}
+@media (max-width:860px){
+  h1{font-size:34px}.datos{grid-template-columns:1fr 1fr}.datos>div:nth-child(2n){border-right:0}.datos>div:nth-child(-n+2){border-bottom:1px solid var(--linea)}
+  .kpis{grid-template-columns:repeat(2,1fr)}.kpis .kpi:last-child{grid-column:1/-1}
+  .row.h{display:none}.row{grid-template-columns:1fr auto;gap:8px 12px}
+  .row .pg,.row .docs{grid-column:1/-1}.row .hb{display:none}.mob{display:block}.top .tag{display:none}
+  .compartir{grid-template-columns:1fr}
+}
+@media print{.tools,.compartir,.wa{display:none}body{background:#fff}.kpi,.lista{border-color:#ccc}}
+</style></head><body>
+<div id="app"><div class="msg"><div class="spin"></div><p style="color:#8A93A1;margin-top:16px">Cargando el panel del viaje…</p></div></div>
+<script>
+(function(){
+var API='https://script.google.com/macros/s/AKfycbwNDEGZo4UuFyzFZl5PrS7EoYzdoEESbuJnYsAvs63LgQ01IT8mm5WFAObxPgTyN2Pr/exec';
+var q=new URLSearchParams(location.search),V=q.get('v')||'',K=q.get('k')||'',app=document.getElementById('app');
+var MES=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'],DIA=['dom','lun','mar','mié','jue','vie','sáb'];
+function e(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function $(n){return '$'+Math.round(n||0).toLocaleString('es-MX')}
+function f(iso){if(!iso)return '';var d=new Date(iso+'T12:00:00Z');return DIA[d.getUTCDay()]+' '+d.getUTCDate()+' '+MES[d.getUTCMonth()]}
+function msg(t,s){app.innerHTML='<div class="msg"><div class="logo">COLLEGE <b>TRAVELER•</b></div><h2>'+t+'</h2><p style="color:#5A6472">'+s+'</p></div>'}
+if(!/^rec[A-Za-z0-9]{14}$/.test(V)||!K){msg('Link incompleto','Abre el panel desde el link que te mandamos. Si lo perdiste, escríbenos al 228 272 8556.');return}
+fetch(API+'?accion=panel&v='+V+'&k='+encodeURIComponent(K)).then(function(r){return r.json()}).then(function(d){
+  if(!d.ok){msg('No pudimos abrir el panel',d.error==='llave'?'Este link no es válido. Pídenos el link correcto al 228 272 8556.':'Intenta de nuevo en un momento.');return}
+  pintar(d)}).catch(function(){msg('No pudimos abrir el panel','Revisa tu conexión e intenta de nuevo.')});
+
+function pintar(d){
+  var v=d.viaje,r=d.resumen,dias=v.inicio?Math.round((new Date(v.inicio+'T12:00:00Z')-new Date(new Date().toISOString().slice(0,10)+'T12:00:00Z'))/864e5):null;
+  document.title=v.evento+' · Panel del maestro';
+  var pct=r.esperado?Math.round(r.cobrado/r.esperado*100):0;
+  var h='<header><div class="w"><div class="top"><span class="logo">COLLEGE <b>TRAVELER•</b></span><span class="tag">Panel del maestro</span></div>'+
+    '<h1>'+e(v.evento)+'</h1><div class="meta">'+e([v.universidad,v.destino].filter(Boolean).join(' · '))+(dias!=null&&dias>=0?' · sale en <b>'+dias+(dias===1?' día':' días')+'</b>':'')+'</div>'+
+    '<div class="datos">'+
+      '<div><div class="l">Salida</div><div class="v">'+e(f(v.inicio))+(v.horaSalida?' · '+e(v.horaSalida):'')+'<small>'+e(v.puntoSalida||'Punto de reunión por confirmar')+'</small></div></div>'+
+      '<div><div class="l">Regreso</div><div class="v">'+e(f(v.fin||v.inicio))+'<small>'+e(v.horaRegreso||'Hora por confirmar')+'</small></div></div>'+
+      '<div><div class="l">Hotel</div><div class="v">'+e(v.hotel||'Sin hospedaje')+'<small>'+e(v.telHotel||'')+'</small></div></div>'+
+      '<div><div class="l">Siguiente fecha de pago</div><div class="v">'+(v.proximoPago?e(f(v.proximoPago)):'Ya no hay pagos')+'<small>Emergencias College Traveler: 228 272 8556</small></div></div>'+
+    '</div></div></header><div class="w">'+
+    '<div class="kpis">'+
+      '<div class="kpi az"><div class="n">'+r.alumnos+'</div><div class="l">Alumnos inscritos</div></div>'+
+      '<div class="kpi ok"><div class="n">'+r.liquidados+'</div><div class="l">Ya liquidaron</div></div>'+
+      '<div class="kpi '+(r.atrasados?'mal':'ok')+'"><div class="n">'+r.atrasados+'</div><div class="l">Atrasados en su pago</div></div>'+
+      '<div class="kpi '+(r.docsOk<r.alumnos?'':'ok')+'"><div class="n">'+r.docsOk+'</div><div class="l">Con documentos completos</div></div>'+
+      '<div class="kpi"><div class="n">'+pct+'%</div><div class="l">Del grupo cobrado</div><div class="bar"><i style="width:'+pct+'%"></i></div></div>'+
+    '</div>'+
+    '<div class="tools"><button class="chip on" data-f="todos">Todos</button><button class="chip" data-f="atr">Atrasados ('+r.atrasados+')</button>'+
+    '<button class="chip" data-f="docs">Faltan documentos ('+(r.alumnos-r.docsOk)+')</button><input class="buscar" placeholder="Buscar alumno" aria-label="Buscar alumno"></div>'+
+    '<div class="lista" id="lista"></div>'+
+    '<div class="compartir">'+
+      '<div class="c"><b>Link de registro y pago por transferencia</b><span>Para los alumnos que aún no se registran o que van a subir su comprobante.</span><br><button class="copy" data-c="'+e(v.registro)+'">Copiar link</button></div>'+
+      '<div class="c"><b>Link para pagar con tarjeta</b><span>El alumno escribe su correo y paga lo que le falta, hasta 3 meses sin intereses.</span><br><button class="copy" data-c="'+e(v.tarjeta)+'">Copiar link</button></div>'+
+    '</div>'+
+    '<div class="pie">Actualizado el '+e(d.generado)+'. Se actualiza solo cada vez que abres el panel. Los pagos con transferencia aparecen cuando el alumno sube su comprobante.</div></div>';
+  app.innerHTML=h;
+  var filtro='todos',texto='';
+  function lista(){
+    var rows=d.alumnos.filter(function(a){
+      if(filtro==='atr'&&a.estado!=='Atrasado')return false;
+      if(filtro==='docs'&&!a.docs.length)return false;
+      return !texto||a.nombre.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').indexOf(texto)>=0});
+    var hh='<div class="row h"><div>Alumno</div><div class="hb">Habitación</div><div>Pago</div><div>Documentos</div><div></div></div>';
+    if(!rows.length)hh+='<div class="vacio">'+(d.alumnos.length?'Nadie en este filtro.':'Todavía no hay alumnos registrados.')+'</div>';
+    rows.forEach(function(a){
+      var p=a.total?Math.min(100,Math.round(a.pagado/a.total*100)):0,cls=a.estado==='Al corriente'?'Al':a.estado;
+      var tel=String(a.tel||'').replace(/\D/g,'');if(tel.length===10)tel='52'+tel;
+      hh+='<div class="row"><div><div class="nm">'+e(a.nombre)+'</div><div class="sb mob">'+e(a.habitacion==='Cuadruple'?'Cuádruple':a.habitacion)+'</div></div>'+
+        '<div class="hb sb">'+e(a.habitacion==='Cuadruple'?'Cuádruple':a.habitacion)+'</div>'+
+        '<div class="pg"><span class="est '+cls+'">'+e(a.estado)+'</span> '+$(a.pagado)+' de '+$(a.total)+(a.atraso?' · <span style="color:#C2410C">debe '+$(a.atraso)+'</span>':'')+'<div class="bar"><i style="width:'+p+'%;background:'+(a.estado==='Atrasado'?'#C2410C':'#009DE0')+'"></i></div></div>'+
+        '<div class="docs">'+(a.docs.length?'<span class="no">Falta: '+e(a.docs.join(', '))+'</span>':'<span class="ok">Completos</span>')+'</div>'+
+        '<div>'+(tel.length>=12?'<a class="wa" href="https://wa.me/'+tel+'" target="_blank" rel="noopener">WhatsApp</a>':'')+'</div></div>';
+    });
+    document.getElementById('lista').innerHTML=hh;
+  }
+  lista();
+  [].forEach.call(document.querySelectorAll('.chip'),function(c){c.onclick=function(){[].forEach.call(document.querySelectorAll('.chip'),function(x){x.classList.toggle('on',x===c)});filtro=c.getAttribute('data-f');lista()}});
+  document.querySelector('.buscar').oninput=function(){texto=this.value.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').trim();lista()};
+  [].forEach.call(document.querySelectorAll('.copy'),function(b){b.onclick=function(){var t=b.getAttribute('data-c');(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Copiado';setTimeout(function(){b.textContent='Copiar link'},1600)},function(){prompt('Copia el link:',t)})}});
+}
+})();
+</script></body></html>
