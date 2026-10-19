@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Viaje a PWC · College Traveler</title>
+<meta property="og:title" content="Viaje a PWC · 25 al 26 de noviembre">
+<meta property="og:description" content="Universidad Anáhuac Xalapa · Ciudad de México · Desde $3,250 por alumno">
+<meta property="og:image" content="https://info.collegetraveler.com/Cdmx/Destino/1.jpg">
+<link rel="icon" href="/marca/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--azul:#009DE0;--azul2:#0089C4;--tinta:#14142B;--ink2:#3C4250;--gris:#5A6472;--gris2:#8A93A1;--linea:#E7EBF0;--bg:#fff;--card:#F6F8FA;--rojo:#C2410C;--verde:#12805C}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);font-family:Lato,Helvetica,Arial,sans-serif;color:var(--tinta);-webkit-font-smoothing:antialiased;line-height:1.5}
+img{display:block;max-width:100%}
+a{color:var(--azul)}
+.w{max-width:1040px;margin:0 auto;padding:0 22px}
+h1,h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;letter-spacing:-.01em;margin:0}
+h2{font-size:44px;line-height:1.05;margin-bottom:10px}
+.sub{font-size:17px;color:var(--gris);font-weight:300;margin:0 0 28px;max-width:640px}
+section{padding:76px 0;border-top:1px solid var(--linea)}
+.logo{font-weight:900;letter-spacing:4px;font-size:14px;color:#fff;text-decoration:none}.logo b{color:var(--azul)}
+.btn{display:inline-block;background:var(--azul);color:#fff;border:0;border-radius:10px;font:inherit;font-weight:700;font-size:16.5px;padding:15px 24px;cursor:pointer;text-align:center;text-decoration:none;transition:background .15s}
+.btn:hover{background:var(--azul2)}.btn.full{display:block;width:100%}
+.btn.ghost{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.55);backdrop-filter:blur(6px)}
+.btn.ghost:hover{background:rgba(255,255,255,.24)}
+.btn.line{background:#fff;color:var(--azul);border:1px solid var(--azul)}
+.btn[disabled]{opacity:.6;cursor:wait}
+
+/* Portada */
+.hero{position:relative;min-height:92vh;min-height:92svh;color:#fff;display:flex;flex-direction:column;background:#14142B center/cover no-repeat}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,20,43,.55) 0%,rgba(20,20,43,.15) 38%,rgba(20,20,43,.78) 100%)}
+.hero>*{position:relative}
+.hero .top{display:flex;justify-content:space-between;align-items:center;padding:22px}
+.hero .top a.wa{color:#fff;font-size:14px;text-decoration:none;opacity:.9}
+.hero .in{margin-top:auto;padding:0 22px 56px;max-width:1040px;width:100%;align-self:center}
+.hero .k{font-size:13px;letter-spacing:2.4px;text-transform:uppercase;opacity:.9}
+.hero h1{font-size:68px;line-height:.98;margin:12px 0 14px}
+.hero .meta{font-size:18px;font-weight:300;opacity:.95}
+.hero .acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+
+/* Tu viaje */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--linea);border-radius:14px;overflow:hidden}
+.facts>div{padding:22px 20px;border-right:1px solid var(--linea)}.facts>div:last-child{border-right:0}
+.facts .l{font-size:13px;color:var(--gris2)}.facts .v{font-size:19px;font-weight:700;margin-top:4px;line-height:1.3}
+.facts .v small{display:block;font-size:13.5px;font-weight:400;color:var(--gris);margin-top:2px}
+
+/* Incluye */
+.inc{display:grid;grid-template-columns:repeat(3,1fr);gap:26px 34px;margin-top:6px}
+.inc .i{display:flex;gap:14px}
+.inc .i svg{flex:none;margin-top:3px}
+.inc b{display:block;font-size:16.5px}.inc span{font-size:14.5px;color:var(--gris)}
+.noinc{margin-top:30px;font-size:15px;color:var(--gris);background:var(--card);border-radius:10px;padding:14px 18px}
+
+/* Día por día */
+.dias{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.dia{background:var(--card);border-radius:14px;padding:24px}
+.dia .n{font-family:'Cormorant Garamond',serif;font-size:54px;line-height:1;color:var(--azul)}
+.dia .m{font-size:13px;color:var(--gris2);letter-spacing:.4px;margin-top:2px}
+.dia b{display:block;font-size:18px;margin-top:14px}.dia p{margin:6px 0 0;color:var(--ink2);font-size:15.5px}
+.dia .h{font-size:13.5px;color:var(--gris);margin-top:10px}
+
+/* Hotel */
+.hot{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:start}
+.gal{position:relative;border-radius:14px;overflow:hidden;background:var(--card)}
+.gal .tr{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.gal .tr::-webkit-scrollbar{display:none}
+.gal img{flex:0 0 100%;width:100%;aspect-ratio:4/3;object-fit:cover;scroll-snap-align:start}
+.gal .dots{position:absolute;bottom:12px;left:0;right:0;display:flex;justify-content:center;gap:7px}
+.gal .dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.55)}.gal .dots i.on{background:#fff}
+.gal button{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.9);cursor:pointer;font-size:18px;color:var(--tinta)}
+.gal .pv{left:12px}.gal .nx{right:12px}
+.stars{color:#E8A317;letter-spacing:2px;font-size:15px}
+.hot h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:34px;line-height:1.1;margin:6px 0 16px}
+.dl{margin:0}.dl div{display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--linea);font-size:15.5px}
+.dl dt{flex:0 0 96px;color:var(--gris2);font-size:14px}.dl dd{margin:0}
+.mapa{margin-top:40px;display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:center}
+.mapa img{border-radius:14px;border:1px solid var(--linea)}
+.mapa ol{list-style:none;margin:16px 0 0;padding:0;columns:2;column-gap:24px}
+.mapa li{font-size:14.5px;padding:6px 0;break-inside:avoid;display:flex;gap:9px;align-items:baseline}
+.mapa li i{flex:none;width:20px;height:20px;border-radius:50%;color:#fff;font-style:normal;font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center}
+.mapa li span{color:var(--gris2);font-size:13px;white-space:nowrap}
+
+/* Precio */
+.precios{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.pc{border:1px solid var(--linea);border-radius:14px;padding:26px}
+.pc .t{font-size:17px;font-weight:700}.pc .s{font-size:14px;color:var(--gris)}
+.pc .reg{margin-top:18px;font-size:14px;color:var(--gris2)}.pc .reg s{color:var(--gris2)}
+.pc .pr{font-family:'Cormorant Garamond',serif;font-size:56px;line-height:1;margin-top:4px}
+.pc .promo{display:inline-block;margin-top:8px;font-size:13px;color:var(--verde);font-weight:700}
+.pc .tj{font-size:14.5px;color:var(--gris);margin-top:10px}
+.pc ol{list-style:none;padding:0;margin:20px 0 0;border-top:1px solid var(--linea)}
+.pc li{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--linea);font-size:15px}
+.pc li span{color:var(--gris)}.pc li b{white-space:nowrap}
+.nota{font-size:14px;color:var(--gris);margin-top:18px;max-width:760px}
+
+/* Cómo pagar */
+.pay{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+.box{border:1px solid var(--linea);border-radius:14px;padding:26px;background:#fff}
+.box h3{font-size:20px;margin:0 0 4px}.box .bs{font-size:14.5px;color:var(--gris);margin:0 0 18px}
+.box.dest{border-color:var(--azul);box-shadow:0 10px 30px rgba(0,157,224,.10)}
+.tag{display:inline-block;font-size:11.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--azul);font-weight:700;margin-bottom:8px}
+label.t{display:block;font-size:14px;font-weight:700;margin:4px 0 8px}
+input.f{width:100%;font:inherit;font-size:17px;padding:14px 16px;border:1px solid #CBD3DC;border-radius:10px;outline:none;color:var(--tinta);background:#fff}
+input.f:focus{border-color:var(--azul);box-shadow:0 0 0 3px rgba(0,157,224,.15)}
+.err{display:none;color:var(--rojo);font-size:14px;margin-top:10px}
+.op{display:block;border:1px solid var(--linea);border-radius:12px;padding:15px 15px 13px 44px;margin-top:10px;cursor:pointer;position:relative}
+.op>input{position:absolute;left:15px;top:18px;accent-color:var(--azul);width:17px;height:17px;margin:0}
+.op.sel{border-color:var(--azul);background:#F2FAFE}
+.op .nm{font-size:16px;font-weight:700}.op .fe{font-size:13.5px;color:var(--gris);margin-top:1px}.op .fe .v{color:var(--rojo);font-weight:700}
+.op .pr{display:flex;justify-content:space-between;align-items:baseline;margin-top:8px;font-size:14px;color:var(--gris)}
+.op .pr b{font-size:20px;color:var(--tinta)}
+.op .mt{display:none;margin-top:10px}.op.sel .mt{display:block}
+.op .mt input{width:100%;font:inherit;font-size:17px;padding:11px 12px 11px 28px;border:1px solid #CBD3DC;border-radius:9px;outline:none}
+.op .mt .px{position:relative}.op .mt .px:before{content:"$";position:absolute;left:12px;top:11px;color:var(--gris);font-size:17px}
+.op .mt small{display:block;color:var(--gris2);font-size:12.5px;margin-top:6px}
+.msi{font-size:13.5px;color:var(--gris);margin:14px 0 0}
+.seg{display:flex;gap:8px;font-size:12.5px;color:var(--gris2);margin-top:12px;line-height:1.5}.seg svg{flex:none;margin-top:2px}
+.hola{font-family:'Cormorant Garamond',serif;font-size:30px;line-height:1.1;margin:0 0 4px}
+.otra{font-size:14px;text-align:center;margin-top:14px;color:var(--gris)}
+.st{display:none}.st.on{display:block}
+.cta{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:14px 0;border-top:1px solid var(--linea);font-size:15px}
+.cta:first-of-type{border-top:0}
+.cta .l{color:var(--gris2);font-size:13.5px}.cta .v{font-weight:700;font-size:16.5px}
+.clabe{font-size:21px;font-weight:700;letter-spacing:.03em;white-space:nowrap}
+.copy{background:var(--card);border:1px solid var(--linea);border-radius:8px;font:inherit;font-size:13px;font-weight:700;color:var(--azul);padding:7px 12px;cursor:pointer;white-space:nowrap}
+.pasos{counter-reset:p;list-style:none;margin:18px 0 0;padding:0}
+.pasos li{counter-increment:p;position:relative;padding-left:36px;margin-bottom:14px;font-size:15px;color:var(--ink2)}
+.pasos li:before{content:counter(p);position:absolute;left:0;top:-4px;font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--azul)}
+.spin{display:inline-block;width:15px;height:15px;border:2px solid rgba(255,255,255,.5);border-top-color:#fff;border-radius:50%;animation:g .8s linear infinite;vertical-align:-2px;margin-right:8px}
+@keyframes g{to{transform:rotate(360deg)}}
+
+/* Antes de salir */
+.go{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.go .c{background:var(--card);border-radius:14px;padding:24px}
+.go .l{font-size:13px;color:var(--gris2)}.go .d{font-family:'Cormorant Garamond',serif;font-size:30px;line-height:1.1;margin:4px 0}
+.go .p{font-size:15px;color:var(--gris)}
+.lists{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}
+.lists ul{margin:10px 0 0;padding-left:18px;color:var(--ink2);font-size:15.5px}.lists li{margin-bottom:6px}
+.lists .lt{font-weight:700}
+
+/* Preguntas */
+.faq details{border-top:1px solid var(--linea);padding:4px 0}
+.faq details:last-child{border-bottom:1px solid var(--linea)}
+.faq summary{cursor:pointer;list-style:none;padding:16px 36px 16px 0;font-weight:700;font-size:16.5px;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";position:absolute;right:4px;top:12px;font-size:24px;font-weight:300;color:var(--azul)}
+.faq details[open] summary:after{content:"–"}
+.faq p{margin:0 0 18px;color:var(--ink2);font-size:15.5px;max-width:760px}
+
+footer{background:var(--tinta);color:#C9CED8;padding:48px 0 110px;font-size:14.5px}
+footer .logo{display:inline-block;margin-bottom:14px}
+footer a{color:#fff}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-top:1px solid var(--linea);transform:translateY(110%);transition:transform .25s}
+.bar.on{transform:none}
+.bar .w{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;padding-bottom:calc(12px + env(safe-area-inset-bottom))}
+.bar .p{font-size:13px;color:var(--gris)}.bar .p b{display:block;font-size:19px;color:var(--tinta)}
+.bar .btn{padding:12px 18px;font-size:15px}
+
+@media (max-width:820px){
+  h2{font-size:36px}section{padding:56px 0}
+  .hero h1{font-size:48px}.hero .meta{font-size:16px}
+  .facts{grid-template-columns:1fr 1fr}.facts>div:nth-child(2n){border-right:0}.facts>div:nth-child(-n+2){border-bottom:1px solid var(--linea)}
+  .inc{grid-template-columns:1fr;gap:18px}
+  .hot,.mapa,.pay,.go,.lists{grid-template-columns:1fr}
+  .mapa ol{columns:1}
+  .clabe{font-size:18px}
+}
+</style></head>
+<body>
+
+<header class="hero" style="background-image:url('/Cdmx/Destino/1.jpg')">
+  <div class="top"><span class="logo">COLLEGE <b>TRAVELER•</b></span><a class="wa" href="https://wa.me/522282728556">¿Dudas? WhatsApp</a></div>
+  <div class="in">
+    <div class="k">Universidad Anáhuac Xalapa · Contabilidad</div>
+    <h1>Viaje a PWC</h1>
+    <div class="meta">Ciudad de México · 25 al 26 de noviembre de 2026 · 2 días y 1 noche</div>
+    <div class="acts">
+      <a class="btn" href="https://airtable.com/appmsBvXAw5NsCVUo/pagOhZHh98EIZnUeQ/form?prefill_Viaje=recL9HbTWlVeDX7qT">Aparta tu lugar</a>
+      <a class="btn ghost" href="#pagar">Ya me registré: pagar</a>
+    </div>
+  </div>
+</header>
+
+<section style="border-top:0">
+  <div class="w">
+    <h2>Tu viaje</h2>
+    <p class="sub">Transporte, hotel y desayuno, con todo organizado de principio a fin.</p>
+    <div class="facts">
+      <div><div class="l">Fechas</div><div class="v">25 al 26 de noviembre<small>2 días y 1 noche</small></div></div>
+      <div><div class="l">Destino</div><div class="v">Ciudad de México</div></div><div><div class="l">Hotel</div><div class="v">The Paragon Hotel Santa Fe<small>4 estrellas, desayuno incluido</small></div></div>
+      <div><div class="l">Precio por alumno</div><div class="v">Desde $3,250<small>En 2 pagos, del 16 de octubre al 1 de noviembre</small></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="w">
+    <h2>Todo esto va incluido</h2>
+    <p class="sub">Sin costos escondidos: lo que ves es lo que pagas.</p>
+    <div class="inc">
+      <div class="i"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="10" fill="#E6F6FD"/><path d="M6.5 11.3l3 3 6-6.6" fill="none" stroke="#009DE0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Transporte redondo</b><span>Xalapa – Ciudad de México, con traslados según el itinerario</span></div></div>
+      <div class="i"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="10" fill="#E6F6FD"/><path d="M6.5 11.3l3 3 6-6.6" fill="none" stroke="#009DE0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Unidad con aire acondicionado</b><span>Operador, combustible, casetas y estacionamientos incluidos</span></div></div>
+      <div class="i"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="10" fill="#E6F6FD"/><path d="M6.5 11.3l3 3 6-6.6" fill="none" stroke="#009DE0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>1 noche de hotel</b><span>The Paragon Hotel Santa Fe, con desayuno buffet incluido</span></div></div>
+      <div class="i"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="10" fill="#E6F6FD"/><path d="M6.5 11.3l3 3 6-6.6" fill="none" stroke="#009DE0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Kit de viaje</b><span>Para el camino</span></div></div>
+      <div class="i"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="10" fill="#E6F6FD"/><path d="M6.5 11.3l3 3 6-6.6" fill="none" stroke="#009DE0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Seguro de viajero</b><span>Dentro de la unidad</span></div></div>
+      <div class="i"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="10" fill="#E6F6FD"/><path d="M6.5 11.3l3 3 6-6.6" fill="none" stroke="#009DE0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Check-in garantizado</b><span>Al llegar al hotel</span></div></div>
+      <div class="i"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="10" fill="#E6F6FD"/><path d="M6.5 11.3l3 3 6-6.6" fill="none" stroke="#009DE0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Asistencia por WhatsApp</b><span>Durante todo el viaje</span></div></div>
+      <div class="i"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="10" fill="#E6F6FD"/><path d="M6.5 11.3l3 3 6-6.6" fill="none" stroke="#009DE0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Coordinación logística</b><span>Por College Traveler</span></div></div>
+    </div>
+    <div class="noinc"><b>No incluye:</b> comidas fuera del desayuno, gastos personales ni propinas.</div>
+  </div>
+</section>
+
+<section>
+  <div class="w">
+    <h2>Día por día</h2>
+    <p class="sub">Los horarios exactos te llegan antes de salir.</p>
+    <div class="dias">
+      <div class="dia"><div class="n">25</div><div class="m">Miércoles · noviembre</div><b>Salida y visita a PwC</b><p>Salida de Xalapa rumbo a Ciudad de México, visita a PwC y noche en el hotel.</p></div>
+      <div class="dia"><div class="n">26</div><div class="m">Jueves · noviembre</div><b>Regreso</b><p>Desayuno en el hotel, check-out y regreso a Xalapa.</p></div>
+    </div>
+  </div>
+</section>
+<section id="hotel">
+  <div class="w">
+    <h2>Tu hotel</h2>
+    <div class="hot" style="margin-top:22px">
+      <div class="gal" id="gal">
+        <div class="tr"><img src="/Cdmx/Paragon_de_Santa_Fe/1.jpg" alt="The Paragon Hotel Santa Fe, foto 1"><img src="/Cdmx/Paragon_de_Santa_Fe/2.jpg" alt="The Paragon Hotel Santa Fe, foto 2"><img src="/Cdmx/Paragon_de_Santa_Fe/3.jpg" alt="The Paragon Hotel Santa Fe, foto 3"><img src="/Cdmx/Paragon_de_Santa_Fe/4.jpg" alt="The Paragon Hotel Santa Fe, foto 4"></div>
+        <button class="pv" aria-label="Foto anterior">‹</button><button class="nx" aria-label="Foto siguiente">›</button>
+        <div class="dots"><i class="on"></i><i></i><i></i><i></i></div>
+      </div>
+      <div>
+        <div class="stars">★★★★</div>
+        <h3>The Paragon Hotel Santa Fe</h3>
+        <dl class="dl">
+          <div><dt>Zona</dt><dd>Santa Fe, Cuajimalpa de Morelos</dd></div>
+          <div><dt>Desayuno</dt><dd>Buffet, incluido</dd></div>
+          <div><dt>Habitación</dt><dd>Habitaciones cuádruple o doble</dd></div><div><dt>Amenidades</dt><dd>Wi-Fi de alta velocidad, Gimnasio, Sauna, Restaurante y bar, Estacionamiento</dd></div>
+          <div><dt>Horario</dt><dd>Check-in 3:00 p.m. · Check-out 12:00 p.m.</dd></div>
+        </dl><a class="btn line" style="margin-top:18px" href="https://www.google.com/maps/search/?api=1&amp;query=19.3580166,-99.2780809">Ver ubicación en Google Maps</a>
+      </div>
+    </div>
+    <div class="mapa">
+      <img src="/Cdmx/Paragon_de_Santa_Fe/mapa.png" alt="Mapa de lo que hay alrededor del hotel">
+      <div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:32px;margin:0">Alrededor de tu hotel</h3>
+        <p class="sub" style="margin:6px 0 0">Minutos caminando desde el hotel.</p>
+        <ol><li><i style="background:#12A150">1</i>Farmacia Guadalajara <span>6 min</span></li><li><i style="background:#12A150">2</i>Santosha Medical <span>5 min</span></li><li><i style="background:#E8A317">3</i>7-Eleven <span>6 min</span></li><li><i style="background:#E8A317">4</i>Oxxo <span>10 min</span></li><li><i style="background:#E8A317">5</i>Walmart Express <span>5 min</span></li><li><i style="background:#E0533D">6</i>Palm <span>1 min</span></li><li><i style="background:#E0533D">7</i>Burgerfi <span>1 min</span></li><li><i style="background:#E0533D">8</i>King Fish <span>1 min</span></li><li><i style="background:#7A5CD6">9</i>Centro Santa Fe <span>9 min</span></li><li><i style="background:#7A5CD6">10</i>Zentrika <span>6 min</span></li></ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="precio">
+  <div class="w">
+    <h2>Cuánto cuesta</h2>
+    <p class="sub">Precio por alumno, de la cotización #PWC26-2026-A. Puedes pagar por transferencia o con tarjeta, hasta 3 meses sin intereses.</p>
+    <div class="precios">
+      <div class="pc"><div class="t">Habitación cuádruple</div><div class="s">4 por habitación</div><div class="reg">Tarifa regular <s>$3,700</s></div>
+        <div class="pr">$3,250</div><div class="promo">Tarifa promocional · ahorras $450</div>
+        <div class="tj">$3,600 con tarjeta, a 3 meses sin intereses</div>
+        <ol><li><span>Apartado · cierre del grupo · 16 de octubre</span><b>$1,650</b></li><li><span>Liquidación · 1 de noviembre</span><b>$1,600</b></li></ol>
+      </div>
+      <div class="pc"><div class="t">Habitación doble</div><div class="s">2 por habitación</div><div class="reg">Tarifa regular <s>$4,400</s></div>
+        <div class="pr">$3,950</div><div class="promo">Tarifa promocional · ahorras $450</div>
+        <div class="tj">$4,300 con tarjeta, a 3 meses sin intereses</div>
+        <ol><li><span>Apartado · cierre del grupo · 16 de octubre</span><b>$1,650</b></li><li><span>Liquidación · 1 de noviembre</span><b>$2,300</b></li></ol>
+      </div>
+    </div>
+    <p class="nota">El grupo se cierra con quienes tengan cubierto el apartado (16 de octubre). Los primeros pagos son iguales en todas las habitaciones; la diferencia va en el último. Puedes adelantar pagos o liquidar todo cuando quieras.</p>
+  </div>
+</section>
+
+<section id="pagar">
+  <div class="w">
+    <h2>Cómo pagar</h2>
+    <p class="sub">Primero regístrate: así apartamos tu lugar a tu nombre. Después paga como prefieras.</p>
+    <div class="pay">
+      <div class="box dest">
+        <span class="tag">Con tarjeta</span>
+        <div class="st on" id="s1">
+          <h3>Paga en línea</h3>
+          <p class="bs">Escribe el correo con el que te registraste. Puedes pagar el siguiente pago, una parte o todo el viaje. Tu pago se registra solo y tu recibo te llega por correo.</p>
+          <form id="f" novalidate>
+            <label class="t" for="correo">Tu correo</label>
+            <input class="f" id="correo" type="email" inputmode="email" autocomplete="email" placeholder="nombre@correo.com">
+            <button class="btn full" id="b1" type="submit" style="margin-top:12px">Ver mis pagos</button>
+            <div class="err" id="e1"></div>
+          </form>
+        </div>
+        <div class="st" id="s2">
+          <p class="hola">Hola, <span id="nombre"></span></p>
+          <p class="bs" id="intro"></p>
+          <div id="lista"></div>
+          <p class="msi" id="msi"></p>
+          <button class="btn full" id="pagar-btn" type="button" style="margin-top:14px">Pagar con tarjeta</button>
+          <div class="err" id="e2"></div>
+          <div class="otra"><a href="#" class="volver">No soy yo</a></div>
+        </div>
+        <div class="st" id="s3">
+          <h3>No encontramos tu registro</h3>
+          <p class="bs">Ese correo no está registrado en este viaje. Regístrate primero y después regresa aquí a pagar.</p>
+          <a class="btn full" href="https://airtable.com/appmsBvXAw5NsCVUo/pagOhZHh98EIZnUeQ/form?prefill_Viaje=recL9HbTWlVeDX7qT">Da clic aquí para registrarte</a>
+          <div class="otra">¿Te registraste con otro correo? <a href="#" class="volver">Intenta con otro</a></div>
+        </div>
+        <div class="st" id="s4">
+          <h3>Ya pagaste todo tu viaje</h3>
+          <p class="bs">Gracias, <span id="nombre2"></span>. No tienes pagos pendientes.</p>
+          <div class="otra"><a href="#" class="volver">Consultar otro correo</a></div>
+        </div>
+        <div class="seg"><svg width="13" height="15" viewBox="0 0 13 15" aria-hidden="true"><rect x="1" y="6.5" width="11" height="7.5" rx="1.5" fill="none" stroke="#8A93A1" stroke-width="1.4"/><path d="M3.5 6.5V4.5a3 3 0 0 1 6 0v2" fill="none" stroke="#8A93A1" stroke-width="1.4"/></svg><span>Pagas en la página oficial de Mercado Pago. El precio con tarjeta incluye la comisión del banco.</span></div>
+      </div>
+
+      <div class="box">
+        <span class="tag">Por transferencia</span>
+        <h3>A la cuenta de College Traveler</h3>
+        <div style="margin-top:12px">
+          <div class="cta"><div><div class="l">Banco</div><div class="v">Santander</div></div></div>
+          <div class="cta"><div><div class="l">A nombre de</div><div class="v">Alberto Maso Yarzabal</div></div></div>
+          <div class="cta"><div><div class="l">CLABE</div><div class="clabe" id="clabe">0148 4065 5117 3565 78</div></div><button class="copy" data-copy="014840655117356578">Copiar</button></div>
+          <div class="cta"><div><div class="l">Concepto</div><div class="v">PWC26 y tu nombre completo</div></div><button class="copy" data-copy="PWC26 ">Copiar</button></div>
+        </div>
+        <ol class="pasos">
+          <li>Transfiere el monto de tu pago.</li>
+          <li>Registra tu pago y sube tu comprobante. Se hace en cada pago.</li>
+        </ol>
+        <a class="btn full line" href="https://airtable.com/appmsBvXAw5NsCVUo/pagOhZHh98EIZnUeQ/form?prefill_Viaje=recL9HbTWlVeDX7qT">Registrar mi pago</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="w">
+    <h2>Antes de salir</h2>
+    <p class="sub">Sube tus documentos en tu registro antes del 1 de noviembre.</p>
+    <div class="go">
+      <div class="c"><div class="l">Salida</div><div class="d">Miércoles 25 de noviembre</div><div class="p">hora por confirmar · Universidad Anáhuac Xalapa</div></div>
+      <div class="c"><div class="l">Regreso</div><div class="d">Jueves 26 de noviembre</div><div class="p">hora por confirmar · Universidad Anáhuac Xalapa</div></div>
+    </div>
+    <div class="lists">
+      <div class="go"><div class="c" style="grid-column:1/-1"><div class="lt">Documentos</div><ul><li>Carta responsiva firmada por tus papás</li><li>Identificación oficial o credencial escolar</li><li>Ficha médica: alergias, medicamentos y un contacto de emergencia</li></ul></div></div>
+      <div class="go"><div class="c" style="grid-column:1/-1"><div class="lt">Qué llevar</div><ul><li>Identificación oficial y credencial de la universidad</li><li>Medicamentos personales</li><li>Ropa y artículos personales para 2 días</li></ul></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="w">
+    <h2>Preguntas frecuentes</h2>
+    <div style="margin-top:22px">
+      <details><summary>¿Con quién comparto habitación?</summary><p>Con compañeros de tu grupo, según el tipo de habitación que pagaste. Pónganse de acuerdo y el responsable nos manda la lista antes de la liquidación.</p></details>
+      <details><summary>¿Qué comidas están incluidas?</summary><p>El desayuno en el hotel. Comidas y cenas van por tu cuenta.</p></details>
+      <details><summary>¿Qué pasa si me atraso en un pago?</summary><p>Tu lugar queda a disposición y se le puede dar a otro alumno. Si vas a atrasarte, avísanos antes de la fecha.</p></details>
+      <details><summary>¿Y si ya no puedo ir?</summary><p>Ningún pago se reembolsa, pero puedes ceder tu lugar a otro alumno sin costo hasta 15 días antes de la salida.</p></details>
+      <details><summary>¿Qué pasa si llego tarde a la salida?</summary><p>Hay 15 minutos de tolerancia. Después la unidad sale y no hay reembolso.</p></details>
+      <details><summary>¿Puedo regresarme o hacer actividades por mi cuenta?</summary><p>No. Todo el grupo sigue el itinerario oficial del viaje, también el regreso.</p></details>
+      <details><summary>¿Puedo llevar a un acompañante?</summary><p>No. El viaje es solo para alumnos y maestros del grupo de la universidad.</p></details>
+      <details><summary>¿Puedo pagar con tarjeta?</summary><p>Sí, hasta 3 meses sin intereses, al precio con tarjeta. En “Cómo pagar” da clic en pagar con tarjeta: tu pago se registra solo.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="w">
+    <span class="logo">COLLEGE <b>TRAVELER•</b></span>
+    <div>¿Otra duda? <a href="https://wa.me/522282728556">Escríbenos por WhatsApp al 228 272 8556</a> o a <a href="mailto:contacto@collegetraveler.com">contacto@collegetraveler.com</a>.</div>
+    <div style="margin-top:18px;color:#8A93A1;font-size:13px">PWC26 · Universidad Anáhuac Xalapa · Cotización #PWC26-2026-A</div>
+  </div>
+</footer>
+
+<div class="bar" id="bar"><div class="w">
+  <div class="p">Por alumno<b>Desde $3,250</b></div>
+  <div style="display:flex;gap:8px"><a class="btn line" href="#pagar">Pagar</a><a class="btn" href="https://airtable.com/appmsBvXAw5NsCVUo/pagOhZHh98EIZnUeQ/form?prefill_Viaje=recL9HbTWlVeDX7qT">Apartar</a></div>
+</div></div>
+
+<script>
+(function(){
+/* Barra inferior: aparece al pasar la portada */
+var bar=document.getElementById('bar'),hero=document.querySelector('.hero');
+function vb(){bar.classList.toggle('on',window.scrollY>hero.offsetHeight*.7&&!(document.getElementById('pagar').getBoundingClientRect().top<innerHeight&&document.getElementById('pagar').getBoundingClientRect().bottom>0))}
+addEventListener('scroll',vb,{passive:true});vb();
+
+/* Galería del hotel */
+var g=document.getElementById('gal');
+if(g){var tr=g.querySelector('.tr'),dots=g.querySelectorAll('.dots i'),n=dots.length;
+  function idx(){return Math.round(tr.scrollLeft/tr.clientWidth)}
+  tr.addEventListener('scroll',function(){var k=idx();dots.forEach(function(d,i){d.classList.toggle('on',i===k)})},{passive:true});
+  g.querySelector('.pv').onclick=function(){tr.scrollTo({left:Math.max(0,idx()-1)*tr.clientWidth,behavior:'smooth'})};
+  g.querySelector('.nx').onclick=function(){tr.scrollTo({left:((idx()+1)%n)*tr.clientWidth,behavior:'smooth'})};}
+
+/* Copiar CLABE y concepto */
+[].forEach.call(document.querySelectorAll('.copy'),function(b){b.onclick=function(){
+  var t=b.getAttribute('data-copy'),ok=function(){b.textContent='Copiado';setTimeout(function(){b.textContent='Copiar'},1600)};
+  if(navigator.clipboard)navigator.clipboard.writeText(t).then(ok,function(){});else{var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy');ok()}catch(e){}a.remove()}}});
+
+/* Pago con tarjeta (Mercado Pago) */
+var API="https://script.google.com/macros/s/AKfycbwNDEGZo4UuFyzFZl5PrS7EoYzdoEESbuJnYsAvs63LgQ01IT8mm5WFAObxPgTyN2Pr/exec",V="recL9HbTWlVeDX7qT",datos=null,correo='';
+var $=function(id){return document.getElementById(id)};
+var MESES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+function dinero(n){return '$'+Number(n).toLocaleString('es-MX',{maximumFractionDigits:2})}
+function tj(b){return Math.ceil(b*1.0818+4)}
+function fecha(iso){if(!iso)return'';var p=iso.split('-');return Number(p[2])+' de '+MESES[Number(p[1])-1]}
+function ver(id){['s1','s2','s3','s4'].forEach(function(s){$(s).classList.toggle('on',s===id)})}
+function api(o){var u=API+'?v='+encodeURIComponent(V);for(var k in o)u+='&'+k+'='+encodeURIComponent(o[k]);return fetch(u).then(function(r){if(!r.ok)throw 0;return r.json()})}
+function load(b,t){b.disabled=!!t;if(t)b.innerHTML='<span class="spin"></span>'+t}
+function err(id,t){var e=$(id);e.textContent=t||'';e.style.display=t?'block':'none'}
+try{var c0=localStorage.getItem('ct_correo');if(c0)$('correo').value=c0}catch(e){}
+
+$('f').addEventListener('submit',function(ev){ev.preventDefault();err('e1');
+  correo=$('correo').value.trim().toLowerCase();
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(correo)){err('e1','Revisa tu correo: parece que está incompleto.');return}
+  var b=$('b1');load(b,'Buscando tu registro…');
+  api({accion:'buscar',correo:correo}).then(function(r){load(b);b.textContent='Ver mis pagos';
+    if(!r.ok&&r.error==='sin_registro'){ver('s3');return}
+    if(!r.ok){err('e1','No pudimos consultar tus pagos. Intenta de nuevo en un momento.');return}
+    try{localStorage.setItem('ct_correo',correo)}catch(e){}
+    if(r.liquidado||!r.pagos.length){$('nombre2').textContent=r.nombre;ver('s4');return}
+    datos=r;pintar();ver('s2');
+  }).catch(function(){load(b);b.textContent='Ver mis pagos';err('e1','No pudimos consultar tus pagos. Revisa tu conexión e intenta de nuevo.')});
+});
+function op(v,nm,fe,m,t,sel,extra){return '<label class="op'+(sel?' sel':'')+'"><input type="radio" name="pg" value="'+v+'"'+(sel?' checked':'')+'><div class="nm">'+nm+'</div><div class="fe">'+fe+'</div>'+
+  (m!=null?'<div class="pr"><span>Transferencia '+dinero(m)+'</span><span>Tarjeta <b>'+dinero(t)+'</b></span></div>':'')+(extra||'')+'</label>'}
+function pintar(){
+  var ps=datos.pagos,p=ps[0],fe=p.vencido?'<span class="v">Venció el '+fecha(p.fecha)+'</span>':'Vence el '+fecha(p.fecha);
+  $('nombre').textContent=datos.nombre;
+  $('intro').textContent='Te falta '+dinero(datos.todo.monto)+(ps.length>1?' en '+ps.length+' pagos':'')+'. Elige cuánto quieres pagar.';
+  var h=op(p.id,'Siguiente pago · '+p.etiqueta,fe,p.monto,p.tarjeta,true);
+  if(ps.length>1)h+=op('todo','Liquidar todo el viaje','Los '+ps.length+' pagos que te faltan, en un solo cargo',datos.todo.monto,datos.todo.tarjeta,false);
+  var min=Math.min(100,datos.todo.monto);
+  h+=op('monto','Otra cantidad','Abona lo que quieras; se descuenta de tus próximos pagos',null,null,false,
+    '<div class="mt"><div class="px"><input type="number" id="m" inputmode="numeric" min="'+min+'" max="'+datos.todo.monto+'" step="50" placeholder="Monto por transferencia"></div><small id="mh">De '+dinero(min)+' a '+dinero(datos.todo.monto)+'.</small></div>');
+  $('lista').innerHTML=h;
+  [].forEach.call(document.querySelectorAll('#lista input[name=pg]'),function(r){r.addEventListener('change',act)});
+  $('m').addEventListener('input',act);$('m').addEventListener('focus',function(){document.querySelector('#lista input[value=monto]').checked=true;act()});
+  act();
+}
+function sel(){var r=document.querySelector('#lista input[name=pg]:checked');return r?r.value:null}
+function montoLibre(){var v=Math.round(Number($('m').value));return v>0?v:0}
+function act(){
+  [].forEach.call(document.querySelectorAll('#lista .op'),function(l){l.classList.toggle('sel',l.querySelector('input[name=pg]').checked)});
+  var s=sel(),b=$('pagar-btn'),t=0;err('e2');
+  if(s==='todo')t=datos.todo.tarjeta;else if(s==='monto'){var m=montoLibre();t=m?tj(m):0;$('mh').textContent=m?'Con tarjeta: '+dinero(tj(m))+'.':'De '+dinero(Math.min(100,datos.todo.monto))+' a '+dinero(datos.todo.monto)+'.'}
+  else t=datos.pagos[0].tarjeta;
+  b.textContent=t?'Pagar '+dinero(t)+' con tarjeta':'Escribe el monto';b.disabled=!t;
+  $('msi').textContent=t?'En una sola exhibición o hasta en 3 meses sin intereses de '+dinero(Math.round(t/3*100)/100)+'.':'';
+}
+$('pagar-btn').addEventListener('click',function(){
+  var s=sel(),o={accion:'pagar',correo:correo,p:s===null?'':s},b=this,txt=b.textContent;
+  if(s==='monto'){var m=montoLibre(),min=Math.min(100,datos.todo.monto);if(m<min||m>datos.todo.monto){err('e2','El monto va de '+dinero(min)+' a '+dinero(datos.todo.monto)+'.');return}o.m=m}
+  else if(s!=='todo')o.p=datos.pagos[0].id;
+  load(b,'Abriendo Mercado Pago…');
+  api(o).then(function(r){if(r.ok&&r.url){location.href=r.url;return}load(b);b.textContent=txt;err('e2','No pudimos abrir el pago. Intenta de nuevo o paga por transferencia.')})
+   .catch(function(){load(b);b.textContent=txt;err('e2','No pudimos abrir el pago. Revisa tu conexión e intenta de nuevo.')});
+});
+[].forEach.call(document.querySelectorAll('.volver'),function(a){a.addEventListener('click',function(e){e.preventDefault();ver('s1');$('correo').focus()})});
+})();
+</script>
+</body></html>
