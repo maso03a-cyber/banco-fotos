@@ -128,12 +128,10 @@ function opcion(val,nm,fe,monto,tj,sel){
 function pintar(){
   $('nombre').textContent=datos.nombre;
   var h='',ps=datos.pagos;
-  $('intro').textContent=ps.length>1?'Te faltan '+ps.length+' pagos. Elige cuál quieres pagar.':'Este es el pago que te falta.';
-  ps.forEach(function(p,i){
-    var fe=p.vencido?'<span class="v">Venció el '+fecha(p.fecha)+'</span>':'Vence el '+fecha(p.fecha);
-    h+=opcion(p.id,p.etiqueta,fe,p.monto,p.tarjeta,i===0);
-  });
-  if(ps.length>1)h+=opcion('todo','Liquidar todo el viaje','Pagas lo que te falta en un solo cargo',datos.todo.monto,datos.todo.tarjeta,false);
+  var p=ps[0],fe=p.vencido?'<span class="v">Venció el '+fecha(p.fecha)+'</span>':'Vence el '+fecha(p.fecha);
+  $('intro').textContent=ps.length>1?'Te faltan '+ps.length+' pagos. Puedes pagar el siguiente o liquidar todo de una vez.':'Este es el pago que te falta.';
+  h+=opcion(p.id,(ps.length>1?'Siguiente pago · ':'')+p.etiqueta,fe,p.monto,p.tarjeta,true);
+  if(ps.length>1)h+=opcion('todo','Liquidar todo el viaje','Los '+ps.length+' pagos que te faltan, en un solo cargo',datos.todo.monto,datos.todo.tarjeta,false);
   $('lista').innerHTML=h;
   [].forEach.call(document.querySelectorAll('#lista input'),function(r){r.addEventListener('change',actualizar)});
   actualizar();
