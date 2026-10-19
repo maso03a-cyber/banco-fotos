@@ -85,7 +85,7 @@ function pintar(d){
     '<div class="datos">'+
       '<div><div class="l">Salida</div><div class="v">'+e(f(v.inicio))+(v.horaSalida?' · '+e(v.horaSalida):'')+'<small>'+e(v.puntoSalida||'Punto de reunión por confirmar')+'</small></div></div>'+
       '<div><div class="l">Regreso</div><div class="v">'+e(f(v.fin||v.inicio))+'<small>'+e(v.horaRegreso||'Hora por confirmar')+'</small></div></div>'+
-      '<div><div class="l">Hotel</div><div class="v">'+e(v.hotel||'Sin hospedaje')+'<small>'+e(v.telHotel||'')+'</small></div></div>'+
+      '<div><div class="l">Hotel</div><div class="v">'+e(v.hotel||(v.idaVuelta?'Sin hospedaje':'Por confirmar'))+'<small>'+e(v.telHotel||'')+'</small></div></div>'+
       '<div><div class="l">Siguiente fecha de pago</div><div class="v">'+(v.proximoPago?e(f(v.proximoPago)):'Ya no hay pagos')+'<small>Emergencias College Traveler: 228 272 8556</small></div></div>'+
     '</div></div></header><div class="w">'+
     '<div class="kpis">'+
