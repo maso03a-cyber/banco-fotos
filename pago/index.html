@@ -1,0 +1,25 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Pago recibido · College Traveler</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--azul:#009DE0;--tinta:#14142B;--gris:#5A6472;--linea:#E7EBF0;--bg:#F6F8FA;--card:#fff}
+body{margin:0;background:var(--bg);font-family:Lato,Helvetica,Arial,sans-serif;color:var(--tinta)}
+.c{max-width:520px;margin:48px auto;background:var(--card);border:1px solid var(--linea);border-radius:14px;padding:36px 30px}
+.logo{font-weight:900;letter-spacing:4px;font-size:15px}.logo b{color:var(--azul)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:38px;line-height:1.1;margin:28px 0 12px}
+p{font-size:17px;line-height:1.6;color:var(--gris);font-weight:300}
+.ok{display:inline-block;border:1px solid #12805C;color:#12805C;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:20px}
+.pie{font-size:13px;color:#8A93A1;margin-top:28px;border-top:1px solid var(--linea);padding-top:16px}
+a{color:var(--azul)}
+@media (max-width:560px){.c{margin:16px;padding:28px 20px}}
+</style></head><body><div class="c">
+<div class="logo">COLLEGE <b>TRAVELER•</b></div>
+<h1 id="t">¡Pago recibido!</h1>
+<span class="ok" id="s">Pago con tarjeta</span>
+<p id="m">Gracias. En unos minutos te llega a tu correo el recibo con el detalle de tu pago y tu saldo del viaje.</p>
+<div class="pie">¿Dudas? Escríbenos a <a href="mailto:contacto@collegetraveler.com">contacto@collegetraveler.com</a> o al +52 228 272 8556.</div>
+</div><script>
+var q=new URLSearchParams(location.search),st=q.get('collection_status')||q.get('status');
+if(st==='pending'||st==='in_process'){document.getElementById('t').textContent='Tu pago está en proceso';document.getElementById('m').textContent='Mercado Pago está revisando tu pago. Cuando se apruebe, te llega tu recibo por correo; no tienes que hacer nada más.';}
+else if(st==='rejected'||st==='null'||st==='failure'){document.getElementById('t').textContent='Tu pago no se completó';document.getElementById('s').style.display='none';document.getElementById('m').textContent='No se hizo ningún cargo. Puedes intentarlo de nuevo desde el link de tu correo o pagar por transferencia.';}
+</script></body></html>
