@@ -35,6 +35,11 @@ a{color:var(--azul)}
 .ok{display:inline-block;border:1px solid #12805C;color:#12805C;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:20px;margin-bottom:6px}
 .pie{font-size:13px;color:var(--gris2);margin-top:28px;border-top:1px solid var(--linea);padding-top:16px;line-height:1.6}
 .spin{display:inline-block;width:15px;height:15px;border:2px solid rgba(255,255,255,.5);border-top-color:#fff;border-radius:50%;animation:g .8s linear infinite;vertical-align:-2px;margin-right:8px}
+
+.op .mt{display:none;margin-top:10px}.op.sel .mt{display:block}
+.op .mt .px{position:relative}.op .mt .px:before{content:"$";position:absolute;left:12px;top:11px;color:var(--gris);font-size:17px}
+.op .mt input{position:static;width:100%;height:auto;font:inherit;font-size:17px;padding:11px 12px 11px 28px;border:1px solid #CBD3DC;border-radius:9px;outline:none}
+.op .mt small{display:block;color:var(--gris2);font-size:12.5px;margin-top:6px}
 @keyframes g{to{transform:rotate(360deg)}}
 @media (max-width:560px){.c{margin:16px;padding:28px 20px}h1{font-size:33px}}
 </style></head><body>
@@ -127,27 +132,39 @@ function opcion(val,nm,fe,monto,tj,sel){
 }
 function pintar(){
   $('nombre').textContent=datos.nombre;
-  var h='',ps=datos.pagos;
-  var p=ps[0],fe=p.vencido?'<span class="v">Venció el '+fecha(p.fecha)+'</span>':'Vence el '+fecha(p.fecha);
-  $('intro').textContent=ps.length>1?'Te faltan '+ps.length+' pagos. Puedes pagar el siguiente o liquidar todo de una vez.':'Este es el pago que te falta.';
-  h+=opcion(p.id,(ps.length>1?'Siguiente pago · ':'')+p.etiqueta,fe,p.monto,p.tarjeta,true);
+  var h='',ps=datos.pagos,p=ps[0],fe=p.vencido?'<span class="v">Venció el '+fecha(p.fecha)+'</span>':'Vence el '+fecha(p.fecha);
+  $('intro').textContent='Te falta '+dinero(datos.todo.monto)+(ps.length>1?' en '+ps.length+' pagos':'')+'. Elige cuánto quieres pagar.';
+  h+=opcion(p.id,'Siguiente pago · '+p.etiqueta,fe,p.monto,p.tarjeta,true);
   if(ps.length>1)h+=opcion('todo','Liquidar todo el viaje','Los '+ps.length+' pagos que te faltan, en un solo cargo',datos.todo.monto,datos.todo.tarjeta,false);
+  var min=Math.min(100,datos.todo.monto);
+  h+='<label class="op"><input type="radio" name="pg" value="monto"><div class="nm">Otra cantidad</div><div class="fe">Abona lo que quieras; se descuenta de tus próximos pagos</div>'+
+     '<div class="mt"><div class="px"><input type="number" id="m" inputmode="numeric" min="'+min+'" max="'+datos.todo.monto+'" step="50" placeholder="Monto por transferencia"></div><small id="mh"></small></div></label>';
   $('lista').innerHTML=h;
-  [].forEach.call(document.querySelectorAll('#lista input'),function(r){r.addEventListener('change',actualizar)});
+  [].forEach.call(document.querySelectorAll('#lista input[name=pg]'),function(r){r.addEventListener('change',actualizar)});
+  $('m').addEventListener('input',actualizar);
+  $('m').addEventListener('focus',function(){document.querySelector('#lista input[value=monto]').checked=true;actualizar()});
   actualizar();
 }
-function elegido(){var r=document.querySelector('#lista input:checked');if(!r)return null;var v=r.value;
-  if(v==='todo')return{id:'todo',tarjeta:datos.todo.tarjeta};for(var i=0;i<datos.pagos.length;i++)if(datos.pagos[i].id===v)return datos.pagos[i];return null}
+function tj(b){return Math.ceil(b*1.0818+4)}
+function libre(){var v=Math.round(Number($('m').value));return v>0?v:0}
+function elegido(){var r=document.querySelector('#lista input[name=pg]:checked');if(!r)return null;var v=r.value;
+  if(v==='todo')return{id:'todo',tarjeta:datos.todo.tarjeta};
+  if(v==='monto'){var m=libre();return{id:'monto',m:m,tarjeta:m?tj(m):0}}
+  return datos.pagos[0]}
 function actualizar(){
-  [].forEach.call(document.querySelectorAll('#lista .op'),function(l){l.classList.toggle('sel',l.querySelector('input').checked)});
-  var e=elegido();if(!e)return;
-  $('pagar').textContent='Pagar '+dinero(e.tarjeta)+' con tarjeta';
-  $('msi').textContent='Puedes pagarlo en una sola exhibición o hasta en 3 meses sin intereses de '+dinero(Math.round(e.tarjeta/3*100)/100)+'. El precio con tarjeta incluye la comisión del banco.';
+  [].forEach.call(document.querySelectorAll('#lista .op'),function(l){l.classList.toggle('sel',l.querySelector('input[name=pg]').checked)});
+  var e=elegido();if(!e)return;var min=Math.min(100,datos.todo.monto);
+  $('mh').textContent=(e.id==='monto'&&e.m)?'Con tarjeta: '+dinero(e.tarjeta)+'.':'De '+dinero(min)+' a '+dinero(datos.todo.monto)+'.';
+  $('pagar').disabled=!e.tarjeta;
+  $('pagar').textContent=e.tarjeta?'Pagar '+dinero(e.tarjeta)+' con tarjeta':'Escribe el monto';
+  $('msi').textContent=e.tarjeta?'Puedes pagarlo en una sola exhibición o hasta en 3 meses sin intereses de '+dinero(Math.round(e.tarjeta/3*100)/100)+'. El precio con tarjeta incluye la comisión del banco.':'';
   error('e2','');
 }
 $('pagar').addEventListener('click',function(){
-  var e=elegido();if(!e)return;var b=this,txt=b.textContent;cargando(b,'Abriendo Mercado Pago…');error('e2','');
-  api({accion:'pagar',correo:correo,p:e.id}).then(function(r){
+  var e=elegido();if(!e)return;var o={accion:'pagar',correo:correo,p:e.id};
+  if(e.id==='monto'){var min=Math.min(100,datos.todo.monto);if(e.m<min||e.m>datos.todo.monto){error('e2','El monto va de '+dinero(min)+' a '+dinero(datos.todo.monto)+'.');return}o.m=e.m}
+  var b=this,txt=b.textContent;cargando(b,'Abriendo Mercado Pago…');error('e2','');
+  api(o).then(function(r){
     if(r.ok&&r.url){location.href=r.url;return}
     cargando(b,'');b.textContent=txt;error('e2','No pudimos abrir el pago. Intenta de nuevo o paga por transferencia.');
   }).catch(function(){cargando(b,'');b.textContent=txt;error('e2','No pudimos abrir el pago. Revisa tu conexión e intenta de nuevo.')});
