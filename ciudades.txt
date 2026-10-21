@@ -29,3 +29,6 @@ Playa_del_Carmen | Playa del Carmen
 Puerto_Vallarta | Puerto Vallarta
 Mazatlan | Mazatlan Sinaloa
 Acapulco | Acapulco
+Ikea | IKEA store building
+Ikea_Showroom | IKEA showroom furniture
+Ikea_Puebla | IKEA Mexico store
