@@ -1,0 +1,91 @@
+{
+ "hotel": "Hotel Imperial Reforma",
+ "lat": 19.4332342,
+ "lng": -99.153579,
+ "categorias": {
+  "salud": {
+   "titulo": "Farmacias y salud",
+   "color": "#12A150"
+  },
+  "tiendas": {
+   "titulo": "Tiendas",
+   "color": "#E8A317"
+  },
+  "comida": {
+   "titulo": "Para comer",
+   "color": "#E0533D"
+  },
+  "plazas": {
+   "titulo": "Plazas comerciales",
+   "color": "#7A5CD6"
+  }
+ },
+ "lugares": [
+  {
+   "n": 1,
+   "cat": "salud",
+   "nombre": "Farmacia Guadalajara",
+   "min": 8
+  },
+  {
+   "n": 2,
+   "cat": "salud",
+   "nombre": "Farmacias Similares",
+   "min": 10
+  },
+  {
+   "n": 3,
+   "cat": "salud",
+   "nombre": "Hospital de la Luz",
+   "min": 7
+  },
+  {
+   "n": 4,
+   "cat": "tiendas",
+   "nombre": "Oxxo",
+   "min": 1
+  },
+  {
+   "n": 5,
+   "cat": "tiendas",
+   "nombre": "Tío Juan",
+   "min": 2
+  },
+  {
+   "n": 6,
+   "cat": "tiendas",
+   "nombre": "Sumesa",
+   "min": 10
+  },
+  {
+   "n": 7,
+   "cat": "comida",
+   "nombre": "Gaudí",
+   "min": 1
+  },
+  {
+   "n": 8,
+   "cat": "comida",
+   "nombre": "Cúpula de Oro",
+   "min": 1
+  },
+  {
+   "n": 9,
+   "cat": "comida",
+   "nombre": "La Gloriosa",
+   "min": 1
+  },
+  {
+   "n": 10,
+   "cat": "plazas",
+   "nombre": "Mercado de Artesanías de La Ciudadela",
+   "min": 9
+  },
+  {
+   "n": 11,
+   "cat": "plazas",
+   "nombre": "Tianguis Ezequiel Montes",
+   "min": 10
+  }
+ ]
+}
