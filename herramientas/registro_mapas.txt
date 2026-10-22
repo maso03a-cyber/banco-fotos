@@ -88,3 +88,4 @@ Cdmx/Sevilla_Palace: emergencia 3 hospitales, 2 farmacias
   overpass https://overpass-api.de/api/interpreter: 502 Server Error: Bad Gateway for url: https://overpass-api.de/api/interpreter
   overpass https://overpass.kumi.systems/api/interpreter: 504 Server Error: Gateway Timeout for url: https://overpass.kumi.systems/api/interpreter
 Cdmx/Hotel_Imperial_Reforma: emergencia 3 hospitales, 2 farmacias
+Cdmx/Sevilla_Palace: 11 lugares

@@ -1,0 +1,91 @@
+{
+ "hotel": "Hotel Sevilla Palace",
+ "lat": 19.4326963,
+ "lng": -99.1562499,
+ "categorias": {
+  "salud": {
+   "titulo": "Farmacias y salud",
+   "color": "#12A150"
+  },
+  "tiendas": {
+   "titulo": "Tiendas",
+   "color": "#E8A317"
+  },
+  "comida": {
+   "titulo": "Para comer",
+   "color": "#E0533D"
+  },
+  "plazas": {
+   "titulo": "Plazas comerciales",
+   "color": "#7A5CD6"
+  }
+ },
+ "lugares": [
+  {
+   "n": 1,
+   "cat": "salud",
+   "nombre": "Farmacia Guadalajara",
+   "min": 9
+  },
+  {
+   "n": 2,
+   "cat": "salud",
+   "nombre": "Farmacias del Ahorro",
+   "min": 12
+  },
+  {
+   "n": 3,
+   "cat": "salud",
+   "nombre": "Hospital de la Luz",
+   "min": 4
+  },
+  {
+   "n": 4,
+   "cat": "tiendas",
+   "nombre": "Oxxo",
+   "min": 3
+  },
+  {
+   "n": 5,
+   "cat": "tiendas",
+   "nombre": "7-Eleven",
+   "min": 5
+  },
+  {
+   "n": 6,
+   "cat": "tiendas",
+   "nombre": "Sumesa",
+   "min": 7
+  },
+  {
+   "n": 7,
+   "cat": "comida",
+   "nombre": "El Diez Parrilla Argentina",
+   "min": 1
+  },
+  {
+   "n": 8,
+   "cat": "comida",
+   "nombre": "Carl's Jr.",
+   "min": 2
+  },
+  {
+   "n": 9,
+   "cat": "comida",
+   "nombre": "Cuchilleros",
+   "min": 2
+  },
+  {
+   "n": 10,
+   "cat": "plazas",
+   "nombre": "Tianguis Ezequiel Montes",
+   "min": 11
+  },
+  {
+   "n": 11,
+   "cat": "plazas",
+   "nombre": "Centro Comercial Reforma 222",
+   "min": 12
+  }
+ ]
+}
