@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cotiza tu viaje académico · College Traveler</title>
+<meta name="description" content="Cuéntanos de tu viaje académico y te enviamos tu cotización.">
+<meta property="og:title" content="Cotiza tu viaje académico · College Traveler">
+<meta property="og:description" content="Cuéntanos de tu viaje y te enviamos tu cotización. Toma menos de 3 minutos.">
+<meta property="og:image" content="https://info.collegetraveler.com/marca/logo.png">
+<link rel="icon" href="../marca/logo-transparente.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#141a33;--blue:#009DE0;--blue-d:#0080b8;--line:#e3e6ee;--soft:#f5f6f9;--muted:#6b7183;--bg:#fff;--err:#c8402e;--r:14px}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--soft);color:var(--ink);font-family:Lato,system-ui,-apple-system,Segoe UI,sans-serif;-webkit-font-smoothing:antialiased}
+body{min-height:100vh;display:flex;flex-direction:column}
+header{background:var(--ink);color:#fff;padding:22px 16px 64px}
+.wrap{max-width:640px;margin:0 auto;width:100%}
+.logo{height:26px;display:block}
+h1{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;font-size:34px;line-height:1.1;margin-top:26px}
+.lead{color:#c9cde0;font-size:15px;margin-top:8px;font-weight:300}
+main{flex:1;padding:0 16px 40px}
+.card{background:#fff;border-radius:var(--r);box-shadow:0 10px 30px rgba(20,26,51,.08);margin-top:-44px;padding:22px 20px 24px}
+.steps{display:flex;gap:6px;margin-bottom:18px}
+.steps i{flex:1;height:4px;border-radius:4px;background:var(--line);transition:background .3s}
+.steps i.on{background:var(--blue)}
+.kicker{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);font-weight:700}
+h2{font-family:"Cormorant Garamond",Georgia,serif;font-size:26px;font-weight:600;margin:4px 0 18px}
+.step{display:none}.step.on{display:block;animation:in .25s ease}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.f{margin-bottom:16px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:480px){.row{grid-template-columns:1fr}}
+label.l{display:block;font-weight:700;font-size:14px;margin-bottom:6px}
+.opt{font-weight:400;color:var(--muted);font-size:12px}
+.help{font-size:12.5px;color:var(--muted);margin:-2px 0 7px;line-height:1.4}
+input[type=text],input[type=tel],input[type=email],input[type=number],input[type=date],textarea{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:12px 13px;font:inherit;font-size:16px;color:var(--ink);background:#fff;transition:border .15s,box-shadow .15s}
+textarea{min-height:84px;resize:vertical}
+input:focus,textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(0,157,224,.15)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{cursor:pointer}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips span{display:inline-block;border:1.5px solid var(--line);border-radius:999px;padding:9px 15px;font-size:14.5px;transition:all .15s;user-select:none}
+.chips input:checked+span{border-color:var(--blue);background:rgba(0,157,224,.08);color:var(--blue-d);font-weight:700}
+.chips input:focus-visible+span{box-shadow:0 0 0 3px rgba(0,157,224,.25)}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;cursor:pointer}
+.check input{width:20px;height:20px;accent-color:var(--blue);margin-top:1px;flex:none}
+.bad input,.bad textarea,.bad .chips span{border-color:var(--err)}
+.msg{display:none;color:var(--err);font-size:12.5px;margin-top:5px}
+.bad .msg{display:block}
+.hide{display:none!important}
+.nav{display:flex;gap:10px;margin-top:22px}
+button{font:inherit;border:0;border-radius:10px;padding:14px 18px;font-size:15.5px;font-weight:700;cursor:pointer}
+.next{flex:1;background:var(--blue);color:#fff}
+.next:hover{background:var(--blue-d)}
+.back{background:var(--soft);color:var(--ink)}
+.next[disabled]{opacity:.6;cursor:wait}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.done{text-align:center;padding:16px 4px 6px}
+.done .ok{width:64px;height:64px;border-radius:50%;background:rgba(0,157,224,.1);color:var(--blue);display:grid;place-items:center;margin:0 auto 14px;font-size:32px}
+.done p{color:var(--muted);line-height:1.5;margin-top:8px}
+.wa{display:inline-block;margin-top:18px;color:var(--blue-d);font-weight:700;text-decoration:none}
+footer{text-align:center;font-size:12px;color:var(--muted);padding:0 16px 28px}
+footer a{color:inherit}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <img class="logo" src="../marca/logo-claro.png" alt="College Traveler">
+  <h1>Cotiza tu viaje académico</h1>
+  <p class="lead">Cuéntanos de tu viaje y te enviamos tu cotización. Toma menos de 3 minutos.</p>
+</div></header>
+
+<main><div class="wrap"><div class="card">
+<form id="frm" novalidate autocomplete="on">
+  <div class="steps" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
+  <div class="hp" aria-hidden="true"><label>No llenar <input type="text" name="sitio_web" tabindex="-1" autocomplete="off"></label></div>
+
+  <!-- 1 -->
+  <section class="step on" data-step="1">
+    <div class="kicker">Paso 1 de 4</div><h2>Tus datos</h2>
+    <div class="f"><label class="l" for="nombre">Tu nombre</label>
+      <input id="nombre" name="nombre" type="text" autocomplete="name" required><div class="msg">Escribe tu nombre.</div></div>
+    <div class="f" data-group="quien"><label class="l">¿Quién solicita la cotización?</label>
+      <div class="chips">
+        <label><input type="radio" name="quien" value="Maestro(a) o coordinador(a)" required><span>Maestro(a) o coordinador(a)</span></label>
+        <label><input type="radio" name="quien" value="Presidente(a) de carrera"><span>Presidente(a) de carrera</span></label>
+      </div><div class="msg">Elige una opción.</div></div>
+    <div class="row">
+      <div class="f"><label class="l" for="telefono">WhatsApp</label>
+        <input id="telefono" name="telefono" type="tel" inputmode="tel" autocomplete="tel" placeholder="228 123 4567" required><div class="msg">Escribe un teléfono de 10 dígitos.</div></div>
+      <div class="f"><label class="l" for="correo">Correo</label>
+        <input id="correo" name="correo" type="email" autocomplete="email" required><div class="msg">Escribe un correo válido.</div></div>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="step" data-step="2">
+    <div class="kicker">Paso 2 de 4</div><h2>El grupo</h2>
+    <div class="row">
+      <div class="f"><label class="l" for="universidad">Universidad</label>
+        <input id="universidad" name="universidad" type="text" autocomplete="organization" required><div class="msg">Escribe la universidad.</div></div>
+      <div class="f"><label class="l" for="carrera">Carrera</label>
+        <input id="carrera" name="carrera" type="text" required><div class="msg">Escribe la carrera.</div></div>
+    </div>
+    <div class="row">
+      <div class="f"><label class="l" for="alumnos">¿Cuántos alumnos viajan?</label>
+        <input id="alumnos" name="alumnos" type="number" inputmode="numeric" min="1" max="500" required><div class="msg">Escribe cuántos alumnos.</div></div>
+      <div class="f"><label class="l" for="maestros">¿Cuántos maestros viajan?</label>
+        <p class="help">Incluye acompañantes con viaje de cortesía.</p>
+        <input id="maestros" name="maestros" type="number" inputmode="numeric" min="0" max="50" required><div class="msg">Escribe cuántos maestros.</div></div>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="step" data-step="3">
+    <div class="kicker">Paso 3 de 4</div><h2>El viaje</h2>
+    <div class="f"><label class="l" for="evento">Nombre del evento o viaje</label>
+      <input id="evento" name="evento" type="text" placeholder="Ej. Talent Land, visita a Bimbo" required><div class="msg">Escribe el nombre del evento o viaje.</div></div>
+    <div class="row">
+      <div class="f"><label class="l" for="salida">¿De qué ciudad salen?</label>
+        <input id="salida" name="salida" type="text" value="Xalapa" required><div class="msg">Escribe la ciudad de salida.</div></div>
+      <div class="f"><label class="l" for="destino">¿A qué ciudad van?</label>
+        <input id="destino" name="destino" type="text" placeholder="Ej. Ciudad de México" required><div class="msg">Escribe el destino.</div></div>
+    </div>
+    <div class="f" data-group="ndest"><label class="l">¿Cuántos destinos tiene el viaje?</label>
+      <div class="chips">
+        <label><input type="radio" name="ndest" value="Un destino" checked><span>Un destino</span></label>
+        <label><input type="radio" name="ndest" value="Varios destinos"><span>Varios destinos</span></label>
+      </div></div>
+    <div class="f hide" id="f-ruta"><label class="l" for="ruta">Ruta del viaje</label>
+      <p class="help">Las ciudades en el orden en que las visitarán. Ej. Xalapa → Puebla → Ciudad de México.</p>
+      <textarea id="ruta" name="ruta"></textarea><div class="msg">Escribe la ruta.</div></div>
+    <div class="f" data-group="regresan"><label class="l">¿Regresan a la misma ciudad de salida?</label>
+      <div class="chips">
+        <label><input type="radio" name="regresan" value="Si" checked><span>Sí</span></label>
+        <label><input type="radio" name="regresan" value="No"><span>No</span></label>
+      </div></div>
+    <div class="f hide" id="f-regreso"><label class="l" for="regreso">¿A qué ciudad regresan?</label>
+      <input id="regreso" name="regreso" type="text"><div class="msg">Escribe la ciudad de regreso.</div></div>
+    <div class="row">
+      <div class="f"><label class="l" for="inicio">Fecha de salida</label>
+        <input id="inicio" name="inicio" type="date" required><div class="msg">Elige la fecha de salida.</div></div>
+      <div class="f"><label class="l" for="fin">Fecha de regreso</label>
+        <input id="fin" name="fin" type="date" required><div class="msg">La fecha de regreso no puede ser antes de la salida.</div></div>
+    </div>
+    <div class="f"><label class="check"><input type="checkbox" name="tentativas"> Las fechas todavía son tentativas</label></div>
+    <div class="f" data-group="unidad"><label class="l">¿En qué les gustaría viajar?</label>
+      <div class="chips">
+        <label><input type="radio" name="unidad" value="Sprinter"><span>Van (hasta 20)</span></label>
+        <label><input type="radio" name="unidad" value="Autobús"><span>Autobús</span></label>
+        <label><input type="radio" name="unidad" value="No estoy seguro" checked><span>No estoy seguro</span></label>
+      </div></div>
+    <div class="f"><label class="check"><input type="checkbox" name="vuelo"> Necesitamos que coticen vuelo (incluye traslados al aeropuerto)</label></div>
+  </section>
+
+  <!-- 4 -->
+  <section class="step" data-step="4">
+    <div class="kicker">Paso 4 de 4</div><h2>Qué van a hacer</h2>
+    <div class="f"><label class="l" for="lugares">¿Qué lugares o evento van a visitar?</label>
+      <p class="help">Un lugar por renglón: empresas, evento o sede. Si aún no lo saben, pon el evento o la zona de la ciudad.</p>
+      <textarea id="lugares" name="lugares" required></textarea><div class="msg">Cuéntanos qué van a visitar.</div></div>
+    <div class="f" data-group="costo"><label class="l">¿El evento o los lugares tienen costo de entrada?</label>
+      <div class="chips">
+        <label><input type="radio" name="costo" value="Si" required><span>Sí</span></label>
+        <label><input type="radio" name="costo" value="No"><span>No</span></label>
+        <label><input type="radio" name="costo" value="No se"><span>No sé</span></label>
+      </div><div class="msg">Elige una opción.</div></div>
+    <div class="f hide" id="f-costoent"><label class="l" for="costoent">¿Cuánto cuesta la entrada por persona? <span class="opt">(si lo sabes)</span></label>
+      <input id="costoent" name="costoent" type="number" inputmode="decimal" min="0" placeholder="$"></div>
+    <div class="f"><label class="l" for="actividad">¿Les gustaría agregar alguna actividad turística? <span class="opt">(opcional)</span></label>
+      <p class="help">Ej. recorrido por el centro histórico, un museo o un tour. La incluimos en la cotización.</p>
+      <textarea id="actividad" name="actividad"></textarea></div>
+    <div class="f"><label class="l" for="comentarios">¿Algo más que debamos saber? <span class="opt">(opcional)</span></label>
+      <textarea id="comentarios" name="comentarios"></textarea></div>
+  </section>
+
+  <section class="step" data-step="5">
+    <div class="done">
+      <div class="ok">✓</div>
+      <h2>¡Listo! Recibimos tu solicitud</h2>
+      <p>Te enviaremos tu cotización muy pronto por WhatsApp o correo.</p>
+      <a class="wa" href="https://wa.me/522282728556" target="_blank" rel="noopener">¿Dudas? Escríbenos por WhatsApp →</a>
+    </div>
+  </section>
+
+  <div class="nav" id="nav">
+    <button type="button" class="back hide" id="back">Atrás</button>
+    <button type="submit" class="next" id="next">Continuar</button>
+  </div>
+</form>
+</div></div></main>
+<footer>College Traveler · Viajes académicos · Xalapa, Ver. · <a href="https://wa.me/522282728556">228 272 8556</a></footer>
+
+<script>
+(function(){
+  var ENDPOINT = "https://hooks.airtable.com/workflows/v1/genericWebhook/appmsBvXAw5NsCVUo/wfl5uIeXe9T0Pt5bZ/wtrTG3HH2Ps0hpN9n";
+  var RESPALDO = "https://airtable.com/appmsBvXAw5NsCVUo/pagoeWTQjtU2SdlRM/form";
+  var f = document.getElementById("frm"), paso = 1, total = 4;
+  var $ = function(s){return f.querySelector(s)}, $$ = function(s){return f.querySelectorAll(s)};
+  var nextB = document.getElementById("next"), backB = document.getElementById("back");
+  var t0 = Date.now();
+
+  function val(n){var e=f.elements[n]; if(!e) return ""; if(e.length!==undefined && e.type!=="select-one"){for(var i=0;i<e.length;i++) if(e[i].checked) return e[i].value; return "";} if(e.type==="checkbox") return e.checked; return (e.value||"").trim();}
+  function toggle(){
+    $("#f-ruta").classList.toggle("hide", val("ndest")!=="Varios destinos");
+    $("#f-regreso").classList.toggle("hide", val("regresan")!=="No");
+    $("#f-costoent").classList.toggle("hide", val("costo")!=="Si");
+  }
+  f.addEventListener("change", function(e){ toggle(); var w=e.target.closest(".f"); if(w) w.classList.remove("bad"); });
+  f.addEventListener("input", function(e){ var w=e.target.closest(".f"); if(w) w.classList.remove("bad"); });
+  $("#inicio").addEventListener("change", function(){ var fin=$("#fin"); fin.min=this.value; if(!fin.value || fin.value<this.value) fin.value=this.value; });
+  var hoy=new Date(); hoy.setDate(hoy.getDate()+1); $("#inicio").min=hoy.toISOString().slice(0,10);
+
+  function malo(el){ var w=el.closest(".f"); w.classList.add("bad"); return w; }
+  function validar(n){
+    var sec=$('.step[data-step="'+n+'"]'), primero=null;
+    sec.querySelectorAll(".f").forEach(function(w){w.classList.remove("bad")});
+    sec.querySelectorAll("input[required],textarea[required]").forEach(function(el){
+      if(el.closest(".hide")) return;
+      var ok;
+      if(el.type==="radio") ok = !!val(el.name);
+      else if(el.type==="email") ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(el.value.trim());
+      else if(el.type==="tel") ok = el.value.replace(/\D/g,"").length>=10;
+      else if(el.type==="number") ok = el.value!=="" && +el.value>=+(el.min||0);
+      else ok = el.value.trim()!=="";
+      if(!ok){ var w=malo(el); primero=primero||w; }
+    });
+    if(n===3){
+      if(val("ndest")==="Varios destinos" && !val("ruta")) primero=primero||malo($("#ruta"));
+      if(val("regresan")==="No" && !val("regreso")) primero=primero||malo($("#regreso"));
+      if(val("inicio") && val("fin") && val("fin")<val("inicio")) primero=primero||malo($("#fin"));
+    }
+    if(primero){ primero.scrollIntoView({behavior:"smooth",block:"center"}); var i=primero.querySelector("input,textarea"); if(i&&i.type!=="radio") i.focus({preventScroll:true}); }
+    return !primero;
+  }
+  function ir(n){
+    paso=n;
+    $$(".step").forEach(function(s){ s.classList.toggle("on", +s.dataset.step===n); });
+    $$(".steps i").forEach(function(b,i){ b.classList.toggle("on", i<Math.min(n,total)); });
+    backB.classList.toggle("hide", n===1 || n>total);
+    document.getElementById("nav").classList.toggle("hide", n>total);
+    nextB.textContent = n===total ? "Enviar solicitud" : "Continuar";
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
+  backB.addEventListener("click", function(){ if(paso>1) ir(paso-1); });
+
+  function datos(){
+    return {
+      nombre:val("nombre"), quien:val("quien"), telefono:val("telefono"), correo:val("correo"),
+      universidad:val("universidad"), carrera:val("carrera"), alumnos:+val("alumnos")||0, maestros:+val("maestros")||0,
+      evento:val("evento"), salida:val("salida")||"Xalapa", destino:val("destino"), ndest:val("ndest"),
+      ruta: val("ndest")==="Varios destinos" ? val("ruta") : "", regresan:val("regresan"),
+      regreso: val("regresan")==="No" ? val("regreso") : "", inicio:val("inicio"), fin:val("fin"),
+      tentativas:!!val("tentativas"), unidad:val("unidad"), vuelo:!!val("vuelo"),
+      lugares:val("lugares"), costo:val("costo"), costoent: val("costo")==="Si" && val("costoent")!=="" ? +val("costoent") : null,
+      actividad:val("actividad"), comentarios:val("comentarios"),
+      origen:"web", segundos:Math.round((Date.now()-t0)/1000)
+    };
+  }
+  function enviar(){
+    if(val("sitio_web")) { ir(total+1); return; }          // robot: se descarta sin avisar
+    nextB.disabled=true; nextB.textContent="Enviando…";
+    var cuerpo = new URLSearchParams({payload: JSON.stringify(datos())});
+    fetch(ENDPOINT, {method:"POST", mode:"no-cors", body:cuerpo})
+      .then(function(){ ir(total+1); })
+      .catch(function(){
+        nextB.disabled=false; nextB.textContent="Enviar solicitud";
+        if(confirm("No pudimos enviar tu solicitud. ¿Quieres llenarla en nuestro formulario de respaldo?")) location.href=RESPALDO;
+      });
+  }
+  f.addEventListener("submit", function(e){
+    e.preventDefault();
+    if(!validar(paso)) return;
+    if(paso<total) ir(paso+1); else enviar();
+  });
+  toggle();
+})();
+</script>
+</body>
+</html>
