@@ -32,3 +32,5 @@ Acapulco | Acapulco
 Ikea | IKEA store building
 Ikea_Showroom | IKEA showroom furniture
 Ikea_Puebla | IKEA Mexico store
+Monte_Alban | Monte Alban
+Hierve_el_Agua | Hierve el Agua
